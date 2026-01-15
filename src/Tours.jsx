@@ -175,7 +175,7 @@ function Tours() {
                             From stunning beaches to majestic mountains, uncover the world's most captivating destinations and create memories that last a lifetime.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <button onClick={plantrip} className="bg-teal-500 text-white font-semibold py-3 cursor-pointer px-8 rounded-full shadow-lg hover:bg-teal-600 transition-all duration-300 transform hover:scale-105">
+                            <button onClick={plantrip} className="bg-teal-500 text-white font-semibold py-3 cursor-pointer px-8 rounded-full shadow-lg hover:bg-teal-600 transition-all duration-300 transform hover:scale-105">
                                 Plan Your Trip
                             </button>
 
