@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from "@emailjs/browser";
-import travel from "./assets/travel.jpeg";
+import travel from "./assets/animemountain.png";
 import goa from "./assets/travel.jpeg";
 import kerala from "./assets/travel.jpeg";
 import darjeeling from "./assets/travel.jpeg";
@@ -142,7 +142,7 @@ function Tours() {
                     <img
                         src={travel}
                         alt="Scenic Travel Background"
-                        className="w-full h-full object-cover opacity-30 scale-105"
+                        className="w-full h-full object-cover opacity-70 scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 to-indigo-200/40 backdrop-blur-sm"></div>
                 </div>
