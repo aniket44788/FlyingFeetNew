@@ -8,9 +8,9 @@ import mcleodganj from "./assets/travel.jpeg";
 import kashmir from "./assets/travel.jpeg";
 import { useNavigate } from 'react-router-dom';
 
-const SERVICE_ID = "service_a74zlnf";     // ✅ Your EmailJS Service ID
-const TEMPLATE_ID = "template_qe2jgen";     // ❗ Replace from EmailJS
-const PUBLIC_KEY = "aG1J-USjBV4O6JSSb";        // ❗ Replace from EmailJS
+const SERVICE_ID = "service_wrif919";     
+    const TEMPLATE_ID = "template_hy3cy8d";     
+const PUBLIC_KEY = "GwTM7Gy-N7kgmfsnV";        
 
 function Tours() {
     const navigate = useNavigate()
@@ -33,7 +33,7 @@ function Tours() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
+        setIsLoading(true);                                                                                                                      
 
         try {
             await emailjs.send(
