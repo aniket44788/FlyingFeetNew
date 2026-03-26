@@ -23,7 +23,8 @@ const QUICK_TAGS = ["Manali", "Triund", "Kedarkantha", "Kasol", "Spiti"];
 const tours = [
   {
     id: 1,
-    image: "https://www.asapholidays.com/blog/wp-content/uploads/2024/05/3nbup.jpg",
+    image:
+      "https://www.asapholidays.com/blog/wp-content/uploads/2024/05/3nbup.jpg",
     title: "Kashmir – Paradise on Earth",
     location: "Jammu & Kashmir",
     duration: "5 Days / 4 Nights",
@@ -32,12 +33,18 @@ const tours = [
     reviews: "1.2k",
     description:
       "Experience the breathtaking beauty of Kashmir with snow-capped mountains, serene Dal Lake, and lush valleys. Explore Srinagar's houseboats, Gulmarg's skiing slopes, and Pahalgam's meadows.",
-    highlights: ["Dal Lake Shikara Ride", "Gulmarg Gondola", "Mughal Gardens", "Pahalgam Valley"],
+    highlights: [
+      "Dal Lake Shikara Ride",
+      "Gulmarg Gondola",
+      "Mughal Gardens",
+      "Pahalgam Valley",
+    ],
     badge: "Popular",
   },
   {
     id: 2,
-    image: "https://assets.vogue.in/photos/5ce44d78b13c9fed0d4f609a/16:9/w_1280,c_limit/Vogue-guide-to-Goa.jpg",
+    image:
+      "https://assets.vogue.in/photos/5ce44d78b13c9fed0d4f609a/16:9/w_1280,c_limit/Vogue-guide-to-Goa.jpg",
     title: "Goa – Beach Paradise",
     location: "Goa",
     duration: "4 Days / 3 Nights",
@@ -46,12 +53,18 @@ const tours = [
     reviews: "980",
     description:
       "Discover the vibrant beaches and Portuguese heritage of Goa. Enjoy water sports, beach parties, historic churches, and delicious seafood.",
-    highlights: ["Beach Hopping", "Water Sports", "Fort Aguada", "Night Markets"],
+    highlights: [
+      "Beach Hopping",
+      "Water Sports",
+      "Fort Aguada",
+      "Night Markets",
+    ],
     badge: "Trending",
   },
   {
     id: 3,
-    image: "https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2023/12/21115556/athirapally-waterfall.jpeg",
+    image:
+      "https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2023/12/21115556/athirapally-waterfall.jpeg",
     title: "Kerala – God's Own Country",
     location: "Kerala",
     duration: "5 Days / 4 Nights",
@@ -60,12 +73,18 @@ const tours = [
     reviews: "1.5k",
     description:
       "Immerse yourself in Kerala's backwaters, tea plantations, and tranquil beaches. Experience traditional houseboats and ayurvedic treatments.",
-    highlights: ["Houseboat Stay", "Tea Plantations", "Ayurvedic Spa", "Kathakali Show"],
+    highlights: [
+      "Houseboat Stay",
+      "Tea Plantations",
+      "Ayurvedic Spa",
+      "Kathakali Show",
+    ],
     badge: "Best Seller",
   },
   {
     id: 4,
-    image: "https://www.roadaffair.com/wp-content/uploads/2022/09/queen-of-hills-darjeeling-india-shutterstock_1335267536.jpg",
+    image:
+      "https://www.roadaffair.com/wp-content/uploads/2022/09/queen-of-hills-darjeeling-india-shutterstock_1335267536.jpg",
     title: "Darjeeling – Queen of Hills",
     location: "West Bengal",
     duration: "5 Days / 4 Nights",
@@ -74,12 +93,18 @@ const tours = [
     reviews: "850",
     description:
       "Witness the majestic Kanchenjunga. Ride the famous toy train, visit tea estates, and explore Buddhist monasteries.",
-    highlights: ["Tiger Hill Sunrise", "Toy Train Ride", "Tea Garden Tour", "Himalayan Zoo"],
+    highlights: [
+      "Tiger Hill Sunrise",
+      "Toy Train Ride",
+      "Tea Garden Tour",
+      "Himalayan Zoo",
+    ],
     badge: "New",
   },
   {
     id: 5,
-    image: "https://www.adotrip.com/public/images/areas/master_images/5d2c28c322915-McLeod_Ganj_Attractions.jpg",
+    image:
+      "https://www.adotrip.com/public/images/areas/master_images/5d2c28c322915-McLeod_Ganj_Attractions.jpg",
     title: "McLeodGanj – Triund Trek",
     location: "Kangra, Himachal Pradesh",
     duration: "4 Days / 3 Nights",
@@ -88,7 +113,12 @@ const tours = [
     reviews: "850",
     description:
       "Experience vibrant Tibetan culture. Visit ancient monasteries, enjoy peaceful cafes, and soak in the spiritual atmosphere of the Himalayas.",
-    highlights: ["Triund Trek", "Dalai Lama Temple", "Bhagsu Waterfall", "Tibetan Market"],
+    highlights: [
+      "Triund Trek",
+      "Dalai Lama Temple",
+      "Bhagsu Waterfall",
+      "Tibetan Market",
+    ],
     badge: "Popular",
   },
 ];
@@ -106,7 +136,12 @@ export default function Tours() {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [selectedTour, setSelectedTour] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
 
   const handleInputChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -115,7 +150,12 @@ export default function Tours() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, { ...formData, tour: selectedTour?.title || "" }, PUBLIC_KEY);
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        { ...formData, tour: selectedTour?.title || "" },
+        PUBLIC_KEY,
+      );
       alert("✅ Enquiry sent! We'll contact you soon.");
       setFormData({ name: "", phone: "", email: "", message: "" });
       setIsEnquiryOpen(false);
@@ -127,10 +167,18 @@ export default function Tours() {
   };
 
   return (
-    <div style={{ fontFamily: "'Segoe UI', sans-serif", background: T.navy, color: T.text }}>
-
+    <div
+      style={{
+        fontFamily: "'Segoe UI', sans-serif",
+        background: T.navy,
+        color: T.text,
+      }}
+    >
       {/* ══ HERO ══ */}
-      <section className="relative w-full overflow-hidden" style={{ minHeight: "90vh" }}>
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ minHeight: "90vh" }}
+      >
         <img
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
           alt="Himalayan mountains"
@@ -156,17 +204,19 @@ export default function Tours() {
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            Explore The Himalayas<br />
-            With{" "}
-            <span style={{ color: T.red }}>Flying Feet</span>
+            Explore The Himalayas
+            <br />
+            With <span style={{ color: T.red }}>Flying Feet</span>
           </h1>
 
           <div className="flex flex-wrap gap-3 mb-8 text-white/70 text-sm font-medium">
-            {["Trekking", "Weekend Trips", "Tour Packages", "Homestays"].map((t) => (
-              <span key={t} className="flex items-center gap-1">
-                <span style={{ color: T.red }}>|</span> {t}
-              </span>
-            ))}
+            {["Trekking", "Weekend Trips", "Tour Packages", "Homestays"].map(
+              (t) => (
+                <span key={t} className="flex items-center gap-1">
+                  <span style={{ color: T.red }}>|</span> {t}
+                </span>
+              ),
+            )}
           </div>
 
           {/* Search bar */}
@@ -175,8 +225,15 @@ export default function Tours() {
             style={{ background: "white" }}
           >
             <div className="flex items-center flex-1 px-5 py-3 gap-3">
-              <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="#9ca3af" strokeWidth={2} viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
+              <svg
+                className="w-5 h-5 flex-shrink-0"
+                fill="none"
+                stroke="#9ca3af"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
               </svg>
               <input
                 type="text"
@@ -191,8 +248,14 @@ export default function Tours() {
                     key={tag}
                     onClick={() => setSearch(tag)}
                     className="text-xs px-3 py-1 rounded-full border border-gray-200 text-gray-500 transition-colors duration-200"
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = T.red; e.currentTarget.style.color = T.red; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e5e7eb"; e.currentTarget.style.color = "#6b7280"; }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = T.red;
+                      e.currentTarget.style.color = T.red;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "#e5e7eb";
+                      e.currentTarget.style.color = "#6b7280";
+                    }}
                   >
                     {tag}
                   </button>
@@ -205,8 +268,18 @@ export default function Tours() {
               style={{ background: T.red, minWidth: "140px" }}
             >
               BOOK NOW
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </button>
           </div>
@@ -219,19 +292,45 @@ export default function Tours() {
               style={{ background: T.red }}
             >
               Explore Treks
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </button>
             <button
               onClick={() => navigate("/packages")}
               className="flex items-center gap-2 font-semibold text-sm px-7 py-3 rounded-full border-2 border-white text-white transition-all duration-300 hover:scale-105"
-              onMouseEnter={(e) => { e.currentTarget.style.background = "white"; e.currentTarget.style.color = T.navy; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "white"; }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = T.navy;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "white";
+              }}
             >
               View Packages
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </button>
           </div>
@@ -246,7 +345,12 @@ export default function Tours() {
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-2xl font-extrabold text-white">{s.value}</p>
-                <p className="text-xs font-medium mt-0.5" style={{ color: T.muted }}>{s.label}</p>
+                <p
+                  className="text-xs font-medium mt-0.5"
+                  style={{ color: T.muted }}
+                >
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
@@ -254,9 +358,11 @@ export default function Tours() {
       </section>
 
       {/* ══ TOURS SECTION ══ */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: T.navy }}>
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8"
+        style={{ background: T.navy }}
+      >
         <div className="max-w-7xl mx-auto">
-
           {/* Section header */}
           <div className="text-center mb-14">
             <span
@@ -266,15 +372,20 @@ export default function Tours() {
               Explore Destinations
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-white">
-              Our Latest{" "}
-              <span style={{ color: T.red }}>Tours</span>
+              Our Latest <span style={{ color: T.red }}>Tours</span>
             </h2>
-            <p style={{ color: T.muted }} className="max-w-xl mx-auto text-base">
+            <p
+              style={{ color: T.muted }}
+              className="max-w-xl mx-auto text-base"
+            >
               Handpicked destinations designed to create unforgettable memories
             </p>
             <div className="flex items-center justify-center gap-2 mt-5">
               <span className="w-10 h-px" style={{ background: T.border }} />
-              <span className="w-2.5 h-2.5 rounded-full" style={{ background: T.red }} />
+              <span
+                className="w-2.5 h-2.5 rounded-full"
+                style={{ background: T.red }}
+              />
               <span className="w-10 h-px" style={{ background: T.border }} />
             </div>
           </div>
@@ -292,11 +403,19 @@ export default function Tours() {
                     border: `1px solid ${T.border}`,
                     boxShadow: "0 4px 32px rgba(0,0,0,0.35)",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 8px 48px rgba(229,62,62,0.18)`)}
-                  onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 4px 32px rgba(0,0,0,0.35)")}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.boxShadow = `0 8px 48px rgba(229,62,62,0.18)`)
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.boxShadow =
+                      "0 4px 32px rgba(0,0,0,0.35)")
+                  }
                 >
                   {/* Image */}
-                  <div className="relative w-full md:w-5/12 overflow-hidden" style={{ minHeight: "280px" }}>
+                  <div
+                    className="relative w-full md:w-5/12 overflow-hidden"
+                    style={{ minHeight: "280px" }}
+                  >
                     <img
                       src={tour.image}
                       alt={tour.title}
@@ -316,13 +435,27 @@ export default function Tours() {
                     {/* Rating */}
                     <div
                       className="absolute bottom-5 right-5 flex items-center gap-1.5 px-3 py-1.5 rounded-full shadow text-sm font-semibold"
-                      style={{ background: "rgba(10,16,40,0.85)", color: "white", backdropFilter: "blur(8px)" }}
+                      style={{
+                        background: "rgba(10,16,40,0.85)",
+                        color: "white",
+                        backdropFilter: "blur(8px)",
+                      }}
                     >
-                      <svg className="w-4 h-4" style={{ color: "#fbbf24" }} fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        className="w-4 h-4"
+                        style={{ color: "#fbbf24" }}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                       </svg>
                       {tour.rating}
-                      <span className="text-xs font-normal" style={{ color: T.muted }}>({tour.reviews})</span>
+                      <span
+                        className="text-xs font-normal"
+                        style={{ color: T.muted }}
+                      >
+                        ({tour.reviews})
+                      </span>
                     </div>
                   </div>
 
@@ -333,19 +466,40 @@ export default function Tours() {
                       <div className="flex flex-wrap gap-2 mb-3">
                         <span
                           className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full"
-                          style={{ background: "rgba(59,130,246,0.15)", color: "#60a5fa" }}
+                          style={{
+                            background: "rgba(59,130,246,0.15)",
+                            color: "#60a5fa",
+                          }}
                         >
-                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                          <svg
+                            className="w-3 h-3"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                           {tour.location}
                         </span>
                         <span
                           className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full"
-                          style={{ background: "rgba(167,139,250,0.15)", color: "#a78bfa" }}
+                          style={{
+                            background: "rgba(167,139,250,0.15)",
+                            color: "#a78bfa",
+                          }}
                         >
-                          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+                          <svg
+                            className="w-3 h-3"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            viewBox="0 0 24 24"
+                          >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
                           </svg>
                           {tour.duration}
                         </span>
@@ -354,21 +508,34 @@ export default function Tours() {
                       <h3 className="text-xl md:text-2xl font-extrabold mb-3 text-white">
                         {tour.title}
                       </h3>
-                      <p className="text-sm leading-relaxed mb-5" style={{ color: T.muted }}>
+                      <p
+                        className="text-sm leading-relaxed mb-5"
+                        style={{ color: T.muted }}
+                      >
                         {tour.description}
                       </p>
 
                       {/* Highlights */}
                       <div className="mb-6">
-                        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: T.muted }}>
+                        <p
+                          className="text-xs font-bold uppercase tracking-widest mb-3"
+                          style={{ color: T.muted }}
+                        >
                           Tour Highlights
                         </p>
                         <div className="grid grid-cols-2 gap-y-2 gap-x-4">
                           {tour.highlights.map((h) => (
-                            <div key={h} className="flex items-center gap-2 text-sm" style={{ color: T.text }}>
+                            <div
+                              key={h}
+                              className="flex items-center gap-2 text-sm"
+                              style={{ color: T.text }}
+                            >
                               <span
                                 className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold"
-                                style={{ background: "rgba(229,62,62,0.15)", color: T.red }}
+                                style={{
+                                  background: "rgba(229,62,62,0.15)",
+                                  color: T.red,
+                                }}
                               >
                                 ✓
                               </span>
@@ -385,41 +552,88 @@ export default function Tours() {
                       style={{ borderColor: T.border }}
                     >
                       <div>
-                        <p className="text-xs font-medium" style={{ color: T.muted }}>Starting from</p>
-                        <p className="text-2xl font-extrabold text-white">{tour.price}</p>
+                        <p
+                          className="text-xs font-medium"
+                          style={{ color: T.muted }}
+                        >
+                          Starting from
+                        </p>
+                        <p className="text-2xl font-extrabold text-white">
+                          {tour.price}
+                        </p>
                       </div>
 
                       <button
                         onClick={() => navigate("/packages")}
                         className="flex items-center gap-2 text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-md"
                         style={{ background: T.red }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = T.redHover)}
-                        onMouseLeave={(e) => (e.currentTarget.style.background = T.red)}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.background = T.redHover)
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.background = T.red)
+                        }
                       >
                         Book Now
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
                         </svg>
                       </button>
 
                       <button
-                        onClick={() => { setSelectedTour(tour); setIsEnquiryOpen(true); }}
+                        onClick={() => {
+                          setSelectedTour(tour);
+                          setIsEnquiryOpen(true);
+                        }}
                         className="flex items-center gap-2 text-sm font-bold px-6 py-2.5 rounded-full border-2 transition-all duration-300 hover:scale-105 text-white"
                         style={{ borderColor: "rgba(255,255,255,0.3)" }}
-                        onMouseEnter={(e) => { e.currentTarget.style.borderColor = T.red; e.currentTarget.style.color = T.red; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)"; e.currentTarget.style.color = "white"; }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.borderColor = T.red;
+                          e.currentTarget.style.color = T.red;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.borderColor =
+                            "rgba(255,255,255,0.3)";
+                          e.currentTarget.style.color = "white";
+                        }}
                       >
                         Get Enquiry
                       </button>
+                      <a
+                        href="https://wa.me/7807812028?text=Namaste%20Mahakal%20Bazar%2C%20mujhe%20prashad%20order%20karna%20hai"
+                        target="_blank"
+                      >
+                        Order on WhatsApp
+                      </a>
 
                       {/* Wishlist */}
                       <button
                         className="p-2.5 rounded-full border transition-all duration-200"
                         style={{ borderColor: T.border, color: T.muted }}
-                        onMouseEnter={(e) => { e.currentTarget.style.borderColor = T.red; e.currentTarget.style.color = T.red; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.borderColor = T.border; e.currentTarget.style.color = T.muted; }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.borderColor = T.red;
+                          e.currentTarget.style.color = T.red;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.borderColor = T.border;
+                          e.currentTarget.style.color = T.muted;
+                        }}
                       >
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                       </button>
@@ -437,7 +651,10 @@ export default function Tours() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
           <div
             className="absolute inset-0"
-            style={{ background: "rgba(10,16,40,0.80)", backdropFilter: "blur(6px)" }}
+            style={{
+              background: "rgba(10,16,40,0.80)",
+              backdropFilter: "blur(6px)",
+            }}
             onClick={() => setIsEnquiryOpen(false)}
           />
           <div
@@ -447,7 +664,10 @@ export default function Tours() {
             {/* Modal header */}
             <div
               className="px-8 py-6 flex justify-between items-start"
-              style={{ background: "rgba(229,62,62,0.12)", borderBottom: `1px solid ${T.border}` }}
+              style={{
+                background: "rgba(229,62,62,0.12)",
+                borderBottom: `1px solid ${T.border}`,
+              }}
             >
               <div>
                 <p
@@ -467,8 +687,18 @@ export default function Tours() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = T.muted)}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
@@ -477,9 +707,27 @@ export default function Tours() {
             <div className="px-8 py-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 {[
-                  { label: "Full Name *", name: "name", type: "text", placeholder: "Your full name", required: true },
-                  { label: "Phone Number *", name: "phone", type: "tel", placeholder: "+91 XXXXX XXXXX", required: true },
-                  { label: "Email", name: "email", type: "email", placeholder: "you@example.com", required: false },
+                  {
+                    label: "Full Name *",
+                    name: "name",
+                    type: "text",
+                    placeholder: "Your full name",
+                    required: true,
+                  },
+                  {
+                    label: "Phone Number *",
+                    name: "phone",
+                    type: "tel",
+                    placeholder: "+91 XXXXX XXXXX",
+                    required: true,
+                  },
+                  {
+                    label: "Email",
+                    name: "email",
+                    type: "email",
+                    placeholder: "you@example.com",
+                    required: false,
+                  },
                 ].map((f) => (
                   <div key={f.name}>
                     <label
