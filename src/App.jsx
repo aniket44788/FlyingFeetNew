@@ -1,20 +1,20 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Navbar from './Navbar'
-import Home from './Home'
-import Packages from './packages'
-import Destination from './Destination'
-import Footer from './Footer'
-import About from './About'
-import Trekking from './Trekking'
-import Triundtrek from './Trekkings/Triundtrek'
-import Kedarkanthatrek from './Trekkings/Kedarkanthatrek'
-import Hemantatrek from './Trekkings/Hemantatrek'
-import Karerilaketrek from './Trekkings/Karerilaketrek'
-import Kheerganga from './Trekkings/Kheerganga'
-import Thatharnatrek from './Trekkings/Thatharnatrek'
-import Sarpastrek from './Trekkings/Sarpastrek'
-import Nagtibbatrek from './Trekkings/Nagtibbatrek'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./Home";
+import Packages from "./packages";
+import Destination from "./Destination";
+import Footer from "./Footer";
+import About from "./About";
+import Trekking from "./Trekking";
+import Triundtrek from "./Trekkings/Triundtrek";
+import Kedarkanthatrek from "./Trekkings/Kedarkanthatrek";
+import Hemantatrek from "./Trekkings/Hemantatrek";
+import Karerilaketrek from "./Trekkings/Karerilaketrek";
+import Kheerganga from "./Trekkings/Kheerganga";
+import Thatharnatrek from "./Trekkings/Thatharnatrek";
+import Sarpastrek from "./Trekkings/Sarpastrek";
+import Nagtibbatrek from "./Trekkings/Nagtibbatrek";
 
 function App() {
   return (
@@ -35,15 +35,10 @@ function App() {
         <Route path="/treks/thatharnatrek" element={<Thatharnatrek />} />
         <Route path="/treks/sar-pass-trek" element={<Sarpastrek />} />
         <Route path="/treks/nag-tibba-trek" element={<Nagtibbatrek />} />
-
-
-
-
-
       </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
