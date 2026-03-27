@@ -237,7 +237,7 @@ export default function TrekkingPage() {
 
       {/* Filter Bar - Improved */}
       <div
-        className="sticky top-0 z-40 backdrop-blur-md border-b"
+        className=" top-0 z-40 backdrop-blur-md border-b"
         style={{
           backgroundColor: `${T.navyLight}f0`,
           borderColor: T.border,
