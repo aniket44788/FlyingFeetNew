@@ -1,0 +1,10 @@
+    User-agent: *
+Allow: /
+
+# Block private pages
+Disallow: /admin
+Disallow: /login
+Disallow: /dashboard
+
+# Sitemap location
+Sitemap: https://www.flyingfeetholidays.com/sitemap.xml
