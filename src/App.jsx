@@ -32,7 +32,7 @@ function App() {
         <Route path="/treks/hampta-pass-trek" element={<Hemantatrek />} />
         <Route path="/treks/kareri-lake-trek" element={<Karerilaketrek />} />
         <Route path="/treks/kheerganga-trek" element={<Kheerganga />} />
-        <Route path="/treks/thatharnatrek" element={<Thatharnatrek />} />
+        <Route path="/treks/thatharana-trek" element={<Thatharnatrek />} />
         <Route path="/treks/sar-pass-trek" element={<Sarpastrek />} />
         <Route path="/treks/nag-tibba-trek" element={<Nagtibbatrek />} />
       </Routes>

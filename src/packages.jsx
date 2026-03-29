@@ -5,18 +5,6 @@ const SERVICE_ID = "service_a74zlnf";
 const TEMPLATE_ID = "template_qe2jgen";
 const PUBLIC_KEY = "aG1J-USjBV4O6JSSb";
 
-/* ── Theme tokens (matches Footer + Tours + About) ── */
-const T = {
-  navy: "#0a1028",
-  navyLight: "#0f1c35",
-  navyCard: "#111827",
-  red: "#e53e3e",
-  redHover: "#c53030",
-  text: "#e2e8f0",
-  muted: "#94a3b8",
-  border: "rgba(255,255,255,0.08)",
-};
-
 const packages = [
   {
     id: 1,
@@ -35,7 +23,7 @@ const packages = [
     location: "Shimla, Himachal Pradesh",
     duration: "5 Days / 4 Nights",
     price: "₹12,999",
-    description: "Escape to the queen of hills, Shimla. Enjoy colonial charm, toy train rides, mall road shopping, and breathtaking Himalayan views in this perfect winter getaway.",
+    description: "Escape to the queen of hills, Shimla. Enjoy colonial charm, toy train rides, mall road shopping, and breathtaking Himalayan views.",
     highlights: ["Toy Train Experience", "Mall Road Shopping", "Kufri Adventure", "Colonial Architecture Tour"],
   },
   {
@@ -45,7 +33,7 @@ const packages = [
     location: "Manali, Himachal Pradesh",
     duration: "4 Days / 3 Nights",
     price: "₹10,999",
-    description: "Traverse the world's longest highway tunnel above 10,000 ft. Explore Rohtang Pass, Solang Valley, and experience thrilling adventures in the Himalayan wilderness.",
+    description: "Traverse the world's longest highway tunnel above 10,000 ft. Explore Rohtang Pass, Solang Valley, and experience thrilling adventures.",
     highlights: ["Atal Tunnel Drive", "Rohtang Pass", "Solang Valley Paragliding", "Hot Springs Visit"],
   },
   {
@@ -55,7 +43,7 @@ const packages = [
     location: "Pan-India Flight Tour",
     duration: "7 Days / 6 Nights",
     price: "₹19,999",
-    description: "Soar above India's diverse landscapes. This aerial tour offers breathtaking views of mountains, coasts, and cities from the comfort of premium flights with guided commentary.",
+    description: "Soar above India's diverse landscapes. This aerial tour offers breathtaking views of mountains, coasts, and cities from premium flights.",
     highlights: ["Scenic Flights", "Aerial Photography", "Multiple Destinations", "Luxury In-Flight Experience"],
   },
 ];
@@ -88,303 +76,203 @@ function Packages() {
     }
   };
 
-  const inputStyle = {
-    width: "100%",
-    padding: "12px 16px 12px 44px",
-    borderRadius: "12px",
-    border: `1px solid ${T.border}`,
-    background: "rgba(255,255,255,0.05)",
-    color: T.text,
-    fontSize: "14px",
-    outline: "none",
-    transition: "border-color 0.2s",
-  };
-
   return (
-    <div style={{ fontFamily: "'Segoe UI', sans-serif", background: T.navy, color: T.text, minHeight: "100vh" }}>
+    <div className="min-h-screen font-sans bg-gray-50 text-gray-900">
 
-      {/* ══ HERO ══ */}
-      <section className="relative w-full overflow-hidden" style={{ minHeight: "50vh" }}>
+      {/* HERO SECTION */}
+      <section className="relative w-full overflow-hidden min-h-[30vh] flex items-center">
         <img
           src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80"
           alt="Travel landscapes"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to bottom, rgba(10,16,40,0.55) 0%, rgba(10,16,40,0.85) 70%, rgba(10,16,40,1) 100%)",
-          }}
-        />
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-28">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest mb-3" style={{ color: T.red }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-orange-500 text-sm font-bold uppercase tracking-widest mb-3">
             Flying Feet Holidays
           </p>
-          <h1
-            className="text-4xl sm:text-5xl font-extrabold text-white mb-4"
-            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
-          >
-            Explore Our <span style={{ color: T.red }}>Exclusive</span> Packages
+          <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+            Explore Our <span className="text-orange-500">Exclusive</span> Packages
           </h1>
-          <p className="text-base max-w-2xl" style={{ color: T.muted }}>
-            Discover handpicked travel packages tailored for unforgettable experiences. From historical wonders to adventurous escapes, find your perfect journey.
-          </p>
-          {/* Divider */}
-          <div className="flex items-center gap-2 mt-6">
-            <span className="w-10 h-px" style={{ background: T.border }} />
-            <span className="w-2.5 h-2.5 rounded-full" style={{ background: T.red }} />
-            <span className="w-10 h-px" style={{ background: T.border }} />
-          </div>
+         
         </div>
       </section>
 
-      {/* ══ PACKAGES ══ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
-        {packages.map((pkg, index) => {
-          const isEven = index % 2 === 0;
-          return (
-            <article
-              key={pkg.id}
-              className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} rounded-3xl overflow-hidden group transition-all duration-500`}
-              style={{
-                background: T.navyLight,
-                border: `1px solid ${T.border}`,
-                boxShadow: "0 4px 32px rgba(0,0,0,0.35)",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 8px 48px rgba(229,62,62,0.18)`)}
-              onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 4px 32px rgba(0,0,0,0.35)")}
-            >
-              {/* ── Image ── */}
-              <div className="relative w-full lg:w-5/12 overflow-hidden" style={{ minHeight: "300px" }}>
-                <img
-                  src={pkg.image}
-                  alt={pkg.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ minHeight: "300px" }}
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-all duration-300" />
+      {/* PACKAGES SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <span className="inline-block px-5 py-2 bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest rounded-full mb-4">
+            CURATED JOURNEYS
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Our Featured <span className="text-orange-500">Packages</span>
+          </h2>
+        </div>
 
-                {/* Price badge */}
-                <div
-                  className="absolute top-5 right-5 font-bold px-4 py-2 rounded-full text-white text-sm shadow-lg"
-                  style={{ background: T.red }}
-                >
-                  {pkg.price}
-                </div>
-
-                {/* Duration badge */}
-                <div
-                  className="absolute bottom-5 left-5 flex items-center gap-2 px-4 py-2 rounded-full text-white text-xs font-semibold shadow-lg"
-                  style={{ background: "rgba(10,16,40,0.85)", backdropFilter: "blur(8px)", border: `1px solid ${T.border}` }}
-                >
-                  <svg className="w-4 h-4" style={{ color: T.red }} fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                  </svg>
-                  {pkg.duration}
-                </div>
-              </div>
-
-              {/* ── Content ── */}
-              <div className="w-full lg:w-7/12 p-8 sm:p-10 flex flex-col justify-between">
-                <div>
-                  {/* Location chip */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span
-                      className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full"
-                      style={{ background: "rgba(59,130,246,0.15)", color: "#60a5fa" }}
-                    >
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                      {pkg.location}
-                    </span>
+        <div className="space-y-12">
+          {packages.map((pkg, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <article
+                key={pkg.id}
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 rounded-3xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl transition-all bg-white`}
+              >
+                {/* Image */}
+                <div className="lg:w-5/12 relative overflow-hidden rounded-3xl lg:rounded-r-none h-80 lg:h-auto">
+                  <img
+                    src={pkg.image}
+                    alt={pkg.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  
+                  {/* Price Badge */}
+                  <div className="absolute top-6 right-6 bg-orange-500 text-white font-bold px-5 py-2 rounded-2xl shadow-lg text-lg">
+                    {pkg.price}
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 leading-tight">
-                    {pkg.title}
-                  </h3>
+                  {/* Duration */}
+                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium px-4 py-2 rounded-2xl flex items-center gap-2 shadow">
+                    <span>⏱️</span>
+                    {pkg.duration}
+                  </div>
+                </div>
 
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: T.muted }}>
-                    {pkg.description}
-                  </p>
+                {/* Content */}
+                <div className="lg:w-7/12 p-6 sm:p-8 lg:p-10 flex flex-col">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-orange-500">📍</span>
+                      <span className="text-sm font-medium text-gray-600">{pkg.location}</span>
+                    </div>
 
-                  {/* Highlights */}
-                  <div className="mb-8">
-                    <p className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: T.muted }}>
-                      <svg className="w-4 h-4" style={{ color: T.red }} fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      Tour Highlights
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                      {pkg.title}
+                    </h3>
+
+                    <p className="text-gray-600 leading-relaxed mb-7 text-[15px]">
+                      {pkg.description}
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {pkg.highlights.map((h, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-2.5 text-sm px-3 py-2.5 rounded-xl"
-                          style={{ background: "rgba(229,62,62,0.07)", border: `1px solid rgba(229,62,62,0.12)`, color: T.text }}
-                        >
-                          <span
-                            className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold"
-                            style={{ background: "rgba(229,62,62,0.18)", color: T.red }}
-                          >
-                            ✓
-                          </span>
-                          {h}
-                        </div>
-                      ))}
+
+                    {/* Highlights */}
+                    <div className="mb-8">
+                      <p className="text-xs font-semibold text-gray-500 mb-4 tracking-widest">WHAT'S INCLUDED</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                        {pkg.highlights.map((highlight, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <div className="w-5 h-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold mt-0.5 flex-shrink-0">
+                              ✓
+                            </div>
+                            <span className="text-gray-700 text-sm">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* CTA */}
-                <div className="flex flex-wrap gap-3 pt-4" style={{ borderTop: `1px solid ${T.border}` }}>
-                  <button
-                    onClick={() => { setSelectedPackage(pkg); setIsEnquiryOpen(true); }}
-                    className="flex items-center gap-2 text-white font-bold text-sm px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-md group/btn"
-                    style={{ background: T.red }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = T.redHover)}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = T.red)}
-                  >
-                    Book Your Adventure
-                    <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </button>
+                  {/* CTA Buttons */}
+                  <div className="mt-auto pt-6 flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => {
+                        setSelectedPackage(pkg);
+                        setIsEnquiryOpen(true);
+                      }}
+                      className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3.5 px-8 rounded-2xl transition-all active:scale-95 flex-1"
+                    >
+                      Send Enquiry
+                    </button>
+                    <button
+                      onClick={() => alert("Booking feature coming soon!")}
+                      className="border border-gray-300 hover:border-orange-500 hover:text-orange-600 font-semibold py-3.5 px-8 rounded-2xl transition-all active:scale-95"
+                    >
+                      View Details
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </article>
-          );
-        })}
+              </article>
+            );
+          })}
+        </div>
       </section>
 
-      {/* ══ ENQUIRY MODAL ══ */}
+      {/* ENQUIRY MODAL */}
       {isEnquiryOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
-          <div
-            className="absolute inset-0"
-            style={{ background: "rgba(10,16,40,0.80)", backdropFilter: "blur(6px)" }}
-            onClick={() => !isLoading && setIsEnquiryOpen(false)}
-          />
-          <div
-            className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl my-8"
-            style={{ background: T.navyLight, border: `1px solid ${T.border}` }}
-          >
-            {/* Modal header */}
-            <div
-              className="px-8 py-6 flex justify-between items-start"
-              style={{ background: "rgba(229,62,62,0.10)", borderBottom: `1px solid ${T.border}` }}
-            >
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden">
+            {/* Header */}
+            <div className="px-6 sm:px-8 py-6 border-b bg-orange-50 flex justify-between items-center">
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: T.red }}>
-                  Book Your Trip
-                </p>
-                <h2 className="text-lg font-extrabold text-white leading-tight">
-                  {selectedPackage?.title}
-                </h2>
-                <p className="text-xs mt-1 flex items-center gap-1" style={{ color: T.muted }}>
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  {selectedPackage?.location}
-                </p>
+                <p className="text-orange-600 text-xs font-bold uppercase tracking-widest">ENQUIRY FORM</p>
+                <h3 className="font-bold text-lg sm:text-xl text-gray-900 mt-1">{selectedPackage?.title}</h3>
               </div>
-              <button
-                onClick={() => !isLoading && setIsEnquiryOpen(false)}
-                disabled={isLoading}
-                className="transition-colors mt-1 disabled:opacity-50"
-                style={{ color: T.muted }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = T.muted)}
+              <button 
+                onClick={() => setIsEnquiryOpen(false)}
+                className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                ✕
               </button>
             </div>
 
             {/* Form */}
-            <div className="px-8 py-6">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {[
-                  { label: "Full Name *", name: "name", type: "text", placeholder: "Your full name", icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z", required: true },
-                  { label: "Phone Number *", name: "phone", type: "tel", placeholder: "+91 XXXXX XXXXX", icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z", required: true },
-                  { label: "Email (Optional)", name: "email", type: "email", placeholder: "you@example.com", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", required: false },
-                ].map((f) => (
-                  <div key={f.name}>
-                    <label className="block text-xs font-bold uppercase tracking-wide mb-1" style={{ color: T.muted }}>
-                      {f.label}
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg className="w-4 h-4" style={{ color: T.muted }} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                          <path d={f.icon} />
-                        </svg>
-                      </div>
-                      <input
-                        type={f.type}
-                        name={f.name}
-                        value={formData[f.name]}
-                        onChange={handleInputChange}
-                        required={f.required}
-                        disabled={isLoading}
-                        placeholder={f.placeholder}
-                        style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = T.red)}
-                        onBlur={(e) => (e.target.style.borderColor = T.border)}
-                      />
-                    </div>
-                  </div>
-                ))}
+            <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500"
+                  placeholder="Your full name"
+                />
+              </div>
 
-                {/* Message */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wide mb-1" style={{ color: T.muted }}>
-                    Message (Optional)
-                  </label>
-                  <div className="relative">
-                    <div className="absolute left-3 top-3 pointer-events-none">
-                      <svg className="w-4 h-4" style={{ color: T.muted }} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                        <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                      </svg>
-                    </div>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      disabled={isLoading}
-                      rows={4}
-                      placeholder="Any special requests or questions?"
-                      style={{ ...inputStyle, paddingLeft: "44px", paddingTop: "12px", resize: "none" }}
-                      onFocus={(e) => (e.target.style.borderColor = T.red)}
-                      onBlur={(e) => (e.target.style.borderColor = T.border)}
-                    />
-                  </div>
-                </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500"
+                  placeholder="+91 XXXXXXXXXX"
+                />
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full py-3.5 rounded-xl text-white font-bold text-sm flex justify-center items-center gap-2 transition-all duration-300 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ background: T.red }}
-                  onMouseEnter={(e) => !isLoading && (e.currentTarget.style.background = T.redHover)}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = T.red)}
-                >
-                  {isLoading ? (
-                    <>
-                      <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Sending…
-                    </>
-                  ) : (
-                    <>
-                      Submit Enquiry
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500"
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 resize-y"
+                  placeholder="Any special requests or preferred dates?"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-400 text-white font-bold py-4 rounded-2xl transition-all mt-4"
+              >
+                {isLoading ? "Sending Enquiry..." : "Submit Enquiry"}
+              </button>
+            </form>
           </div>
         </div>
       )}

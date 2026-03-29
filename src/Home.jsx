@@ -8,10 +8,6 @@ function Home() {
             <div>
                 <Tours />
             </div>
-
-       
-
-
         </>
 
     );
