@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Import your local images
 import animemountain from "./assets/animemountain.png";
@@ -105,21 +106,9 @@ const filters = [
   { label: "Extended (5D+)", value: "long" },
 ];
 
-const T = {
-  navy: "#0a1028",
-  navyLight: "#0f1c35",
-  darkBg: "#0F1B2D",
-  red: "#e53e3e",
-  text: "#e2e8f0",
-  muted: "#94a3b8",
-  border: "rgba(255,255,255,0.08)",
-  cardBg: "#1e2937",
-  cardBorder: "rgba(255,255,255,0.1)",
-};
-
 function DurationBadge({ duration }) {
   return (
-    <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-4 py-1.5 rounded-br-xl shadow-md z-10">
+    <div className="absolute top-0 left-0 bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-br-xl shadow-md z-10">
       {duration}
     </div>
   );
@@ -127,13 +116,7 @@ function DurationBadge({ duration }) {
 
 function TrekCard({ trek }) {
   return (
-    <div
-      className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border group"
-      style={{
-        backgroundColor: T.cardBg,
-        borderColor: T.cardBorder,
-      }}
-    >
+    <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
       {/* Image Section */}
       <div className="relative h-56">
         <img
@@ -143,18 +126,19 @@ function TrekCard({ trek }) {
         />
         <DurationBadge duration={trek.duration} />
 
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
       {/* Card Content */}
       <div className="p-6">
-        <h3 className="font-bold text-xl mb-2 leading-tight" style={{ color: T.text }}>
+        <h3 className="font-bold text-xl mb-2 leading-tight text-gray-900">
           {trek.name}
         </h3>
 
         {/* Location */}
-        <div className="flex items-center gap-1.5 mb-5" style={{ color: T.muted }}>
-          <span className="text-red-500">📍</span>
+        <div className="flex items-center gap-1.5 mb-5 text-gray-600">
+          <span className="text-orange-500">📍</span>
           <span className="text-sm font-medium">{trek.state}</span>
         </div>
 
@@ -163,27 +147,27 @@ function TrekCard({ trek }) {
           <div>
             <div className="flex items-center gap-1">
               <span className="text-yellow-400 text-3xl leading-none">★</span>
-              <span className="text-3xl font-bold" style={{ color: T.text }}>
+              <span className="text-3xl font-bold text-gray-900">
                 {trek.rating}
               </span>
             </div>
-            <div className="text-xs" style={{ color: T.muted }}>
+            <div className="text-xs text-gray-500">
               ({trek.reviews} reviews)
             </div>
           </div>
 
           <div className="text-right">
-            <div className="text-xs tracking-widest" style={{ color: T.muted }}>
+            <div className="text-xs tracking-widest text-gray-500">
               STARTING FROM
             </div>
-            <div className="text-3xl font-black text-red-500">
+            <div className="text-3xl font-black text-orange-500">
               ₹{trek.price.toLocaleString("en-IN")}
             </div>
           </div>
         </div>
 
         {/* Inclusions */}
-        <div className="space-y-2 mb-6 text-sm" style={{ color: T.muted }}>
+        <div className="space-y-2 mb-6 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-lg">✔</span>
             Meals Included
@@ -196,21 +180,21 @@ function TrekCard({ trek }) {
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <a
-            href={trek.detailUrl}
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-xl text-center transition-all duration-200"
+          <Link
+            to={trek.detailUrl}
+            className="flex-1 bg-gray-900 hover:bg-black text-white font-semibold py-3.5 rounded-2xl text-center transition-all duration-200"
           >
             View Details
-          </a>
+          </Link>
 
           <button
             onClick={() =>
               window.open(
                 `https://wa.me/919876543210?text=Hi, I'm interested in booking ${trek.name}`,
-                "_blank"
+                "_blank",
               )
             }
-            className="flex-1 bg-red-600 hover:bg-red-700 text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 transition-all duration-200"
+            className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-2 transition-all duration-200"
           >
             Book Now →
           </button>
@@ -227,76 +211,35 @@ export default function TrekkingPage() {
     if (activeFilter === "all") return true;
     if (activeFilter === "hp") return t.state === "Himachal Pradesh";
     if (activeFilter === "uk") return t.state === "Uttarakhand";
-    if (activeFilter === "short") return ["2D / 1N", "3D / 2N"].includes(t.duration);
-    if (activeFilter === "long") return ["5D / 4N", "6D / 5N"].includes(t.duration);
+    if (activeFilter === "short")
+      return ["2D / 1N", "3D / 2N"].includes(t.duration);
+    if (activeFilter === "long")
+      return ["5D / 4N", "6D / 5N"].includes(t.duration);
     return true;
   });
 
   return (
-    <div className="min-h-screen font-sans" style={{ backgroundColor: T.darkBg }}>
+    <div className="min-h-screen font-sans bg-gray-50 text-gray-900">
+     
 
-      {/* Filter Bar - Improved */}
-      <div
-        className=" top-0 z-40 backdrop-blur-md border-b"
-        style={{
-          backgroundColor: `${T.navyLight}f0`,
-          borderColor: T.border,
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3 flex-wrap">
-          <span className="font-semibold text-sm uppercase tracking-widest" style={{ color: T.muted }}>
-            Filter:
-          </span>
-          {filters.map((f) => {
-            const isActive = activeFilter === f.value;
-            return (
-              <button
-                key={f.value}
-                onClick={() => setActiveFilter(f.value)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                  isActive 
-                    ? "bg-red-600 text-white shadow-lg" 
-                    : "bg-white/10 hover:bg-white/20 text-white border border-white/10"
-                }`}
-              >
-                {f.label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Main Content Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12" style={{ backgroundColor: T.darkBg }}>
-        <div className="flex justify-between items-center mb-10">
-          <h2 
-            className="text-3xl font-bold" 
-            style={{ color: T.text }}
-          >
+      {/* Main Content */}
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
+          <h2 className="text-3xl font-bold text-gray-900">
             All Trekking Packages
           </h2>
-          <span
-            className="px-5 py-2 rounded-full text-sm border"
-            style={{
-              background: "rgba(255,255,255,0.08)",
-              color: T.muted,
-              borderColor: T.border,
-            }}
-          >
+          <span className="px-5 py-2 rounded-full text-sm bg-gray-100 text-gray-600">
             {filteredTreks.length} Treks Available
           </span>
         </div>
 
         {filteredTreks.length === 0 ? (
-          <div 
-            className="text-center py-20" 
-            style={{ color: T.muted }}
-          >
-            <div className="text-6xl mb-4">🏔</div>
-            <p>No treks found for this filter.</p>
+          <div className="text-center py-20 text-gray-500">
+            <div className="text-6xl mb-4">🏔️</div>
+            <p className="text-xl">No treks found for this filter.</p>
             <button
               onClick={() => setActiveFilter("all")}
-              className="mt-6 text-red-400 hover:text-red-500 underline transition-colors"
+              className="mt-6 text-orange-500 hover:text-orange-600 underline"
             >
               Show all treks
             </button>
@@ -310,14 +253,8 @@ export default function TrekkingPage() {
         )}
       </section>
 
-      <footer
-        className="text-center py-10 text-sm border-t"
-        style={{ 
-          color: T.muted, 
-          borderColor: T.border,
-          backgroundColor: T.darkBg 
-        }}
-      >
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-10 text-center text-sm text-gray-500">
         © 2025 FHolidays • All Rights Reserved • +91 98765 43210
       </footer>
     </div>
