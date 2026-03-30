@@ -220,8 +220,6 @@ export default function TrekkingPage() {
 
   return (
     <div className="min-h-screen font-sans bg-gray-50 text-gray-900">
-     
-
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
