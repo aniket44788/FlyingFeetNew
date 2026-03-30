@@ -28,9 +28,9 @@ function Navbar() {
                             { label: "About", to: "/about" },
                             { label: "Packages", to: "/packages" },
                             { label: "Trekking", to: "/trekking" },
-                            { label: "Domestic", to: "/domestic" },
-                            { label: "International", to: "/international" },
-                            { label: "Our Stay", to: "/our-stay" },
+                            // { label: "Domestic", to: "/domestic" },
+                            // { label: "International", to: "/international" },
+                            // { label: "Our Stay", to: "/our-stay" },
                         ].map((item) => (
                             <Link
                                 key={item.label}
@@ -108,10 +108,10 @@ function Navbar() {
                             { label: "About", to: "/about" },
                             { label: "Packages", to: "/packages" },
                             { label: "Trekking", to: "/trekking" },
-                            { label: "Domestic", to: "/domestic" },
-                            { label: "International", to: "/international" },
-                            { label: "Our Stay", to: "/our-stay" },
-                            { label: "Contact", to: "/contact" },
+                            // { label: "Domestic", to: "/domestic" },
+                            // { label: "International", to: "/international" },
+                            // { label: "Our Stay", to: "/our-stay" },
+                            // { label: "Contact", to: "/contact" },
                         ].map((item) => (
                             <Link
                                 key={item.label}
