@@ -10,11 +10,11 @@ function Footer() {
             {/* Map Section */}
             <Map />
 
-            <footer className="relative font-sans bg-white text-gray-900">
+            <footer className="relative font-sans bg-white text-white">
 
 
                 {/* ── Main Footer Body ── */}
-                <div className="bg-white pt-12 pb-10 border-t border-gray-100">
+                <div className="bg-[#0f1b2d]  pt-12 pb-10 border-t border-gray-100">
                     <div className="max-w-7xl mx-auto px-6">
 
                         {/* ── Grid: 4 columns on desktop, stacked on mobile ── */}
@@ -30,29 +30,29 @@ function Footer() {
                                             <path d="M8 22 L20 10 L32 22 L26 22 L26 30 L22 30 L22 25 L18 25 L18 30 L14 30 L14 22 Z"
                                                 fill="white" opacity="0.95"/>
                                         </svg>
-                                        <span className="text-2xl font-bold tracking-tight text-gray-900">
+                                        <span className="text-2xl font-bold tracking-tight text-white">
                                             Flying Feet Holidays
                                         </span>
                                     </div>
                                 </div>
 
-                                <p className="text-gray-600 text-sm leading-relaxed">
-                                    Explore the <strong className="text-gray-900">Himalayas</strong> with trusted trekking and tour experts. We provide trekking, weekend trips, domestic &amp; international tour packages with the best travel experience.
+                                <p className="text-white text-sm leading-relaxed">
+                                    Explore the <strong className="text-white">Himalayas</strong> with trusted trekking and tour experts. We provide trekking, weekend trips, domestic &amp; international tour packages with the best travel experience.
                                 </p>
 
                                 {/* Contact details */}
                                 <div className="space-y-2 pt-3">
-                                    <p className="flex items-center gap-2 text-sm text-gray-600">
+                                    <p className="flex items-center gap-2 text-sm text-white">
                                         <span className="text-orange-500">📍</span>
-                                        McLeodganj, <strong className="text-gray-900">Himachal Pradesh</strong>
+                                        McLeodganj, <strong className="text-white">Himachal Pradesh</strong>
                                     </p>
-                                    <p className="flex items-center gap-2 text-sm text-gray-600">
+                                    <p className="flex items-center gap-2 text-sm text-white">
                                         <span className="text-orange-500">☎</span>
                                         <a href="tel:+918351846490" className="hover:text-orange-600 transition-colors">
                                             +91 83518 46490
                                         </a>
                                     </p>
-                                    <p className="flex items-center gap-2 text-sm text-gray-600">
+                                    <p className="flex items-center gap-2 text-sm text-white">
                                         <span className="text-orange-500">✉</span>
                                         <a href="mailto:holidaysflyingfeet@gmail.com" 
                                            className="hover:text-orange-600 transition-colors break-all">
@@ -64,7 +64,7 @@ function Footer() {
 
                             {/* ── Column 2: Quick Links ── */}
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-5">Quick Links</h3>
+                                <h3 className="text-lg font-semibold text-white mb-5">Quick Links</h3>
                                 <ul className="space-y-2">
                                     {[
                                         { label: 'Home', to: '/' },
@@ -78,7 +78,7 @@ function Footer() {
                                         <li key={label}>
                                             <Link
                                                 to={to}
-                                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors group"
+                                                className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors group"
                                             >
                                                 <span className="text-orange-500 group-hover:translate-x-1 transition-transform">→</span>
                                                 {label}
@@ -90,7 +90,7 @@ function Footer() {
 
                             {/* ── Column 3: Popular Treks ── */}
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-5">Popular Treks</h3>
+                                <h3 className="text-lg font-semibold text-white mb-5">Popular Treks</h3>
                                 <ul className="space-y-2">
                                     {[
                                         'Triund Trek',
@@ -103,7 +103,7 @@ function Footer() {
                                         <li key={trek}>
                                             <Link
                                                 to="/packages"
-                                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors group"
+                                                className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors group"
                                             >
                                                 <span className="text-orange-500 group-hover:translate-x-1 transition-transform">→</span>
                                                 {trek}
@@ -115,7 +115,7 @@ function Footer() {
 
                             {/* ── Column 4: Newsletter + Social ── */}
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-5">
+                                <h3 className="text-lg font-semibold text-white mb-5">
                                     Get Travel Deals &amp; Trekking Updates
                                 </h3>
 
@@ -124,7 +124,7 @@ function Footer() {
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="flex-1 bg-white text-gray-700 placeholder-gray-400 px-4 py-3 text-sm outline-none"
+                                        className="flex-1 bg-white text-white placeholder-gray-400 px-4 py-3 text-sm outline-none"
                                     />
                                     <button
                                         className="px-5 py-3 text-sm font-semibold text-white flex-shrink-0 hover:bg-orange-600 transition-all"
@@ -135,7 +135,7 @@ function Footer() {
                                 </div>
 
                                 {/* Follow Us */}
-                                <h4 className="text-base font-semibold text-gray-900 mb-4">Follow Us</h4>
+                                <h4 className="text-base font-semibold text-white mb-4">Follow Us</h4>
                                 <div className="flex gap-3 flex-wrap">
                                     {/* Facebook */}
                                     <a href="#" aria-label="Facebook"
@@ -178,10 +178,10 @@ function Footer() {
 
                         {/* ── Bottom Bar ── */}
                         <div
-                            className="mt-14 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500"
+                            className="mt-14 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white"
                             style={{ borderColor: '#e5e7eb' }}
                         >
-                            <p>© {new Date().getFullYear()} <strong className="text-gray-900">Flying Feet Holidays</strong>. All Rights Reserved.</p>
+                            <p>© {new Date().getFullYear()} <strong className="text-white">Flying Feet Holidays</strong>. All Rights Reserved.</p>
                             <div className="flex gap-6">
                                 <Link to="/privacy" className="hover:text-orange-600 transition-colors">Privacy Policy</Link>
                                 <Link to="/terms" className="hover:text-orange-600 transition-colors">Terms &amp; Conditions</Link>

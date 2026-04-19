@@ -2,15 +2,15 @@ import React from "react";
 
 function Map() {
   return (
-    <div className="w-full bg-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div className="w-full bg-[#0f1b2d]  py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
             Find Us Here
           </h3>
           <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-4 text-sm md:text-base max-w-md mx-auto">
+          <p className="text-white mt-4 text-sm md:text-base max-w-md mx-auto">
             Visit our office or get directions to plan your next Himalayan adventure
           </p>
         </div>
@@ -31,7 +31,7 @@ function Map() {
           </div>
 
           {/* Map Overlay Info */}
-          <div className="absolute bottom-4 left-4 right-4 md:left-6 md:bottom-6 md:right-auto bg-white shadow-lg text-gray-900 p-5 rounded-2xl border-l-4 border-orange-500">
+          <div className="absolute bottom-4 left-4 right-4 md:left-6 md:bottom-6 md:right-auto bg-white shadow-lg text-white p-5 rounded-2xl border-l-4 border-orange-500">
             <div className="flex items-start gap-3">
               <svg className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -39,7 +39,7 @@ function Map() {
               </svg>
               <div>
                 <h4 className="font-semibold text-base">Flying Feet Holidays</h4>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-white mt-1">
                   Near Bus Stand, Bhagsunag Rd, McLeod Ganj, Dharamshala
                 </p>
               </div>
@@ -63,7 +63,7 @@ function Map() {
 
           <a
             href="tel:+918351846490"
-            className="inline-flex items-center gap-3 px-8 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-2xl font-medium transition-all duration-300 hover:scale-105 shadow-md text-sm md:text-base"
+            className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#0f1b2d]  hover:bg-gray-200 text-white rounded-2xl font-medium transition-all duration-300 hover:scale-105 shadow-md text-sm md:text-base"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

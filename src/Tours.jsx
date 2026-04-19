@@ -161,17 +161,14 @@ export default function Tours() {
       {/* HERO SECTION */}
 
 
-
-
-
       {/* TOURS SECTION */}
-      <section className="py-5 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-5 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#0f1b2d] ">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4 bg-orange-100 text-orange-600">
               EXPLORE DESTINATIONS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
               Our Latest <span className="text-orange-500">Tours</span>
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto text-base">
@@ -281,7 +278,7 @@ export default function Tours() {
 
       {/* ENQUIRY MODAL */}
       {isEnquiryOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white backdrop-blur-sm">
           <div className="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden">
             <div className="px-6 sm:px-8 py-6 border-b bg-orange-50 flex justify-between items-center">
               <div>

@@ -6,7 +6,7 @@ function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 z-50 bg-[#0f1b2d] border-b border-gray-200 shadow-sm font-sans">
+        <nav className="sticky top-0 z-50 bg-[#0f1b2d] border-b border-white shadow-sm font-sans">
 
             {/* Main Navbar */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ function Navbar() {
                             <Link
                                 key={item.label}
                                 to={item.to}
-                                className="relative text-gray-700 hover:text-gray-900 text-sm lg:text-base font-medium px-4 py-2 transition-all duration-200 group"
+                                className="relative text-white hover:text-white text-sm lg:text-base font-medium px-4 py-2 transition-all duration-200 group"
                             >
                                 {item.label}
                                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-orange-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
@@ -47,7 +47,7 @@ function Navbar() {
                     <div className="hidden md:flex items-center gap-3">
                         <a
                             href="tel:+919876543210"
-                            className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors px-4 py-2"
+                            className="flex items-center gap-2 text-sm font-medium text-white hover:text-white transition-colors px-4 py-2"
                         >
                             <span>📞</span> Call Now
                         </a>
@@ -63,7 +63,7 @@ function Navbar() {
                     {/* Mobile Hamburger */}
                     <button
                         onClick={() => setOpen(!open)}
-                        className="md:hidden text-white p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                        className="md:hidden text-white p-2 rounded-lg hover:bg-white transition-colors"
                         aria-label="Toggle menu"
                     >
                         {open ? (
@@ -81,7 +81,7 @@ function Navbar() {
 
             {/* Mobile Menu - Slide in from RIGHT */}
             <div
-                className={`fixed inset-y-0 right-0 z-50 w-80 bg-[#0f1b2d] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden border-l border-gray-200 ${open ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed inset-y-0 right-0 z-50 w-80 bg-[#0f1b2d] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden border-l border-white ${open ? 'translate-x-0' : 'translate-x-full'}`}
             >
                 <div className="p-6 flex flex-col h-full">
                     {/* Mobile Header */}
@@ -117,7 +117,7 @@ function Navbar() {
                                 key={item.label}
                                 to={item.to}
                                 onClick={() => setOpen(false)}
-                                className="px-4 py-4 text-white hover:bg-gray-50 hover:text-orange-600 rounded-xl font-medium transition-all text-base"
+                                className="px-4 py-4 text-white hover:text-orange-600 rounded-xl font-medium transition-all text-base"
                             >
                                 {item.label}
                             </Link>
@@ -128,7 +128,7 @@ function Navbar() {
                     <div className="mt-auto pt-8 space-y-3">
                         <a
                             href="tel:+919876543210"
-                            className="flex items-center justify-center gap-3 w-full border border-gray-300 text-white font-medium py-3.5 rounded-2xl hover:bg-gray-50 transition-all"
+                            className="flex items-center justify-center gap-3 w-full border border-white text-white font-medium py-3.5 rounded-2xl hover:bg-white transition-all"
                         >
                             📞 Call Now
                         </a>

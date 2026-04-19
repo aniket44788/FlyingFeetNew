@@ -77,7 +77,7 @@ function Packages() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 text-gray-900">
+    <div className="min-h-screen font-sans bg-[#0f1b2d]  text-white">
 
       {/* HERO SECTION */}
       <section className="relative w-full overflow-hidden min-h-[30vh] flex items-center">
@@ -105,7 +105,7 @@ function Packages() {
           <span className="inline-block px-5 py-2 bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest rounded-full mb-4">
             CURATED JOURNEYS
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Our Featured <span className="text-orange-500">Packages</span>
           </h2>
         </div>
@@ -116,7 +116,7 @@ function Packages() {
             return (
               <article
                 key={pkg.id}
-                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 rounded-3xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl transition-all bg-white`}
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 rounded-3xl overflow-hidden border  shadow-lg hover:shadow-2xl transition-all bg-[#0f1b2d] `}
               >
                 {/* Image */}
                 <div className="lg:w-5/12 relative overflow-hidden rounded-3xl lg:rounded-r-none h-80 lg:h-auto">
@@ -132,7 +132,7 @@ function Packages() {
                   </div>
 
                   {/* Duration */}
-                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium px-4 py-2 rounded-2xl flex items-center gap-2 shadow">
+                  <div className="absolute bottom-6 left-6 bg-[#0f1b2d]  backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-2xl flex items-center gap-2 shadow">
                     <span>⏱️</span>
                     {pkg.duration}
                   </div>
@@ -143,27 +143,27 @@ function Packages() {
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-orange-500">📍</span>
-                      <span className="text-sm font-medium text-gray-600">{pkg.location}</span>
+                      <span className="text-sm font-medium text-white">{pkg.location}</span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
                       {pkg.title}
                     </h3>
 
-                    <p className="text-gray-600 leading-relaxed mb-7 text-[15px]">
+                    <p className="text-white leading-relaxed mb-7 text-[15px]">
                       {pkg.description}
                     </p>
 
                     {/* Highlights */}
                     <div className="mb-8">
-                      <p className="text-xs font-semibold text-gray-500 mb-4 tracking-widest">WHAT'S INCLUDED</p>
+                      <p className="text-xs font-semibold text-white mb-4 tracking-widest">WHAT'S INCLUDED</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                         {pkg.highlights.map((highlight, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <div className="w-5 h-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold mt-0.5 flex-shrink-0">
                               ✓
                             </div>
-                            <span className="text-gray-700 text-sm">{highlight}</span>
+                            <span className="text-white text-sm">{highlight}</span>
                           </div>
                         ))}
                       </div>
@@ -197,7 +197,7 @@ function Packages() {
 
       {/* ENQUIRY MODAL */}
       {isEnquiryOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0f1b2d]  backdrop-blur-sm">
           <div className="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden">
             {/* Header */}
             <div className="px-6 sm:px-8 py-6 border-b bg-orange-50 flex justify-between items-center">

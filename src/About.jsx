@@ -81,7 +81,7 @@ function About() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 text-gray-900">
+    <div className="min-h-screen font-sans bg-[#0f1b2d]  text-white">
       {/* HERO SECTION */}
       <section className="relative w-full overflow-hidden min-h-[55vh] flex items-center">
         <img
@@ -113,14 +113,14 @@ function About() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           {/* CONTACT FORM */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
+          <div className="bg-[#0f1b2d]  rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
             <p className="text-orange-600 text-xs font-bold uppercase tracking-widest mb-2">
               SEND A MESSAGE
             </p>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-3xl font-bold text-white mb-2">
               We'd Love to Hear From You
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-white mb-8">
               We'll get back to you within 24 hours.
             </p>
 
@@ -140,7 +140,7 @@ function About() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-white mb-1">
                   Full Name *
                 </label>
                 <input
@@ -158,7 +158,7 @@ function About() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-white mb-1">
                   Email Address *
                 </label>
                 <input
@@ -176,7 +176,7 @@ function About() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-white mb-1">
                   Phone Number *
                 </label>
                 <input
@@ -233,11 +233,11 @@ function About() {
           {/* RIGHT COLUMN - CONTACT INFO */}
           <div className="space-y-8">
             {/* Contact Information */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
+            <div className="bg-[#0f1b2d]  rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
               <p className="text-orange-600 text-xs font-bold uppercase tracking-widest mb-2">
                 REACH US
               </p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Contact Information
               </h3>
 
@@ -274,21 +274,21 @@ function About() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-500">{label}</p>
-                    <p className="font-semibold text-gray-900 text-[15px]">
+                    <p className="font-semibold text-white text-[15px]">
                       {value}
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5">{sub}</p>
+                    <p className="text-xs text-white mt-0.5">{sub}</p>
                   </div>
                 </a>
               ))}
             </div>
 
             {/* Business Hours */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
+            <div className="bg-[#0f1b2d]  rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
               <p className="text-orange-600 text-xs font-bold uppercase tracking-widest mb-2">
                 WE'RE OPEN
               </p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Business Hours
               </h3>
               <div className="space-y-4">
@@ -299,7 +299,7 @@ function About() {
                     key={day}
                     className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
                   >
-                    <span className="text-gray-600 font-medium">{day}</span>
+                    <span className="text-white font-medium">{day}</span>
                     <span className="font-semibold text-orange-600">
                       {time}
                     </span>
@@ -309,11 +309,11 @@ function About() {
             </div>
 
             {/* Social Links */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
+            <div className="bg-[#0f1b2d]  rounded-3xl p-8 sm:p-10 shadow-xl border border-gray-100">
               <p className="text-orange-600 text-xs font-bold uppercase tracking-widest mb-2">
                 FOLLOW ALONG
               </p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-2xl font-bold text-white mb-6">
                 Connect With Us
               </h3>
               <div className="flex flex-wrap gap-4">
