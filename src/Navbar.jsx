@@ -28,9 +28,6 @@ function Navbar() {
                             { label: "About", to: "/about" },
                             { label: "Packages", to: "/packages" },
                             { label: "Trekking", to: "/trekking" },
-                            // { label: "Domestic", to: "/domestic" },
-                            // { label: "International", to: "/international" },
-                            // { label: "Our Stay", to: "/our-stay" },
                         ].map((item) => (
                             <Link
                                 key={item.label}
@@ -46,17 +43,17 @@ function Navbar() {
                     {/* Desktop Right Side */}
                     <div className="hidden md:flex items-center gap-3">
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+91 83518 46490"
                             className="flex items-center gap-2 text-sm font-medium text-white hover:text-white transition-colors px-4 py-2"
                         >
                             <span>📞</span> Call Now
                         </a>
 
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+91 83518 46490"
                             className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all"
                         >
-                            +91 98765 43210
+                            +91  83518 46490
                         </a>
                     </div>
 
@@ -108,10 +105,6 @@ function Navbar() {
                             { label: "About", to: "/about" },
                             { label: "Packages", to: "/packages" },
                             { label: "Trekking", to: "/trekking" },
-                            // { label: "Domestic", to: "/domestic" },
-                            // { label: "International", to: "/international" },
-                            // { label: "Our Stay", to: "/our-stay" },
-                            // { label: "Contact", to: "/contact" },
                         ].map((item) => (
                             <Link
                                 key={item.label}
