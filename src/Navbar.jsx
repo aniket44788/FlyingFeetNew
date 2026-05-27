@@ -28,6 +28,7 @@ function Navbar() {
                             { label: "About", to: "/about" },
                             { label: "Packages", to: "/packages" },
                             { label: "Trekking", to: "/trekking" },
+                              { label: "Weekend Trips", to: "/weekendtrips" },
                         ].map((item) => (
                             <Link
                                 key={item.label}
@@ -105,6 +106,7 @@ function Navbar() {
                             { label: "About", to: "/about" },
                             { label: "Packages", to: "/packages" },
                             { label: "Trekking", to: "/trekking" },
+                            { label: "Weekend Trips", to: "/weekendtrips" },
                         ].map((item) => (
                             <Link
                                 key={item.label}
@@ -120,7 +122,7 @@ function Navbar() {
                     {/* Mobile CTAs */}
                     <div className="mt-auto pt-8 space-y-3">
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+918351846490"
                             className="flex items-center justify-center gap-3 w-full border border-white text-white font-medium py-3.5 rounded-2xl hover:bg-white transition-all"
                         >
                             📞 Call Now
@@ -130,7 +132,7 @@ function Navbar() {
                             href="tel:+919876543210"
                             className="flex items-center justify-center gap-3 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-2xl transition-all"
                         >
-                            +91 98765 43210
+                            +91 83518 46490
                         </a>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ import Kheerganga from "./Trekkings/Kheerganga";
 import Thatharnatrek from "./Trekkings/Thatharnatrek";
 import Sarpastrek from "./Trekkings/Sarpastrek";
 import Nagtibbatrek from "./Trekkings/Nagtibbatrek";
+import WeekendTrips from "./WeekendTrips";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/treks/thatharana-trek" element={<Thatharnatrek />} />
         <Route path="/treks/sar-pass-trek" element={<Sarpastrek />} />
         <Route path="/treks/nag-tibba-trek" element={<Nagtibbatrek />} />
+        <Route path="weekendtrips" element={<WeekendTrips/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
