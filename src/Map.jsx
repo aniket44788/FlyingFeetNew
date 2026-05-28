@@ -2,7 +2,7 @@ import React from "react";
 
 function Map() {
   return (
-    <div className="w-full bg-[#0f1b2d]  py-12 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div className="w-full bg-[#0f1b2d]  py-6 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-10">

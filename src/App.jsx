@@ -16,6 +16,9 @@ import Thatharnatrek from "./Trekkings/Thatharnatrek";
 import Sarpastrek from "./Trekkings/Sarpastrek";
 import Nagtibbatrek from "./Trekkings/Nagtibbatrek";
 import WeekendTrips from "./WeekendTrips";
+import DomesticTours from "./DomesticTours";
+import Internationaltours from "./InternationalTours";
+import Ourstay from "./Ourstay";
 
 function App() {
   return (
@@ -27,6 +30,7 @@ function App() {
         <Route path="/destinations" element={<Destination />} />
         <Route path="/about" element={<About />} />
         <Route path="/trekking" element={<Trekking />} />
+        <Route path="/ourstay" element={<Ourstay />} />
 
         <Route path="/treks/triund-trek" element={<Triundtrek />} />
         <Route path="/treks/kedarkantha-trek" element={<Kedarkanthatrek />} />
@@ -36,7 +40,9 @@ function App() {
         <Route path="/treks/thatharana-trek" element={<Thatharnatrek />} />
         <Route path="/treks/sar-pass-trek" element={<Sarpastrek />} />
         <Route path="/treks/nag-tibba-trek" element={<Nagtibbatrek />} />
-        <Route path="weekendtrips" element={<WeekendTrips/>} />
+        <Route path="/weekendtrips" element={<WeekendTrips />} />
+        <Route path="/domestictours" element={<DomesticTours />} />
+        <Route path="/internationaltours" element={<Internationaltours />} />
       </Routes>
       <Footer />
     </BrowserRouter>

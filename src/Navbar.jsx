@@ -1,152 +1,170 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo2 from "./assets/halicoptor.png";
+import { PiPhoneCallFill } from "react-icons/pi";
 
 function Navbar() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    return (
-        <nav className="sticky top-0 z-50 bg-[#0f1b2d] border-b border-white shadow-sm font-sans">
+  const navLinks = [
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Packages", to: "/packages" },
+    { label: "Trekking", to: "/trekking" },
+    { label: "Weekend Trips", to: "/weekendtrips" },
+    { label: "Domestic Tours", to: "/domestictours" },
+    { label: "International Tours", to: "/internationaltours" },
+    { label: "Our Stays", to: "/ourstay" },
+  ];
 
-            {/* Main Navbar */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16 sm:h-20">
+  return (
+    <nav className="sticky top-0 z-50 bg-[#0f1b2d] border-b border-white/10 shadow-lg">
+      
+      {/* Navbar Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="flex items-center justify-between h-16 md:h-20">
+          
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo2}
+              alt="Flying Feet Holidays"
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+            />
+          </Link>
 
-                    {/* Logo */}
-                    <Link to="/" className="flex items-center flex-shrink-0">
-                        <img
-                            src={logo2}
-                            alt="Flying Feet Holidays"
-                            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
-                        />
-                    </Link>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                className="relative text-white text-sm xl:text-base font-medium px-3 py-2 group transition"
+              >
+                {item.label}
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
-                        {[
-                            { label: "Home", to: "/" },
-                            { label: "About", to: "/about" },
-                            { label: "Packages", to: "/packages" },
-                            { label: "Trekking", to: "/trekking" },
-                              { label: "Weekend Trips", to: "/weekendtrips" },
-                        ].map((item) => (
-                            <Link
-                                key={item.label}
-                                to={item.to}
-                                className="relative text-white hover:text-white text-sm lg:text-base font-medium px-4 py-2 transition-all duration-200 group"
-                            >
-                                {item.label}
-                                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-orange-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
-                            </Link>
-                        ))}
-                    </div>
+                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 -translate-x-1/2 bg-orange-500 transition-all duration-300 group-hover:w-3/4"></span>
+              </Link>
+            ))}
+          </div>
 
-                    {/* Desktop Right Side */}
-                    <div className="hidden md:flex items-center gap-3">
-                        <a
-                            href="tel:+91 83518 46490"
-                            className="flex items-center gap-2 text-sm font-medium text-white hover:text-white transition-colors px-4 py-2"
-                        >
-                            <span>📞</span> Call Now
-                        </a>
-
-                        <a
-                            href="tel:+91 83518 46490"
-                            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all"
-                        >
-                            +91  83518 46490
-                        </a>
-                    </div>
-
-                    {/* Mobile Hamburger */}
-                    <button
-                        onClick={() => setOpen(!open)}
-                        className="md:hidden text-white p-2 rounded-lg hover:bg-white transition-colors"
-                        aria-label="Toggle menu"
-                    >
-                        {open ? (
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        ) : (
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        )}
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Menu - Slide in from RIGHT */}
-            <div
-                className={`fixed inset-y-0 right-0 z-50 w-80 bg-[#0f1b2d] shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden border-l border-white ${open ? 'translate-x-0' : 'translate-x-full'}`}
+          {/* Desktop Call Button */}
+          <div className="hidden md:flex items-center">
+            <a
+              href="tel:+918351846490"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 transition px-4 py-2 rounded-full"
             >
-                <div className="p-6 flex flex-col h-full">
-                    {/* Mobile Header */}
-                    <div className="flex justify-between items-center mb-8">
-                        <Link to="/" onClick={() => setOpen(false)}>
-                            <img
-                                src={logo2}
-                                alt="Flying Feet Holidays"
-                                className="h-12 w-auto object-contain"
-                            />
-                        </Link>
-                        <button
-                            onClick={() => setOpen(false)}
-                            className="text-white  p-2"
-                        >
-                            ✕
-                        </button>
-                    </div>
+              <PiPhoneCallFill className="text-xl text-white" />
 
-                    {/* Mobile Links */}
-                    <div className="flex flex-col space-y-1">
-                        {[
-                            { label: "Home", to: "/" },
-                            { label: "About", to: "/about" },
-                            { label: "Packages", to: "/packages" },
-                            { label: "Trekking", to: "/trekking" },
-                            { label: "Weekend Trips", to: "/weekendtrips" },
-                        ].map((item) => (
-                            <Link
-                                key={item.label}
-                                to={item.to}
-                                onClick={() => setOpen(false)}
-                                className="px-4 py-4 text-white hover:text-orange-600 rounded-xl font-medium transition-all text-base"
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                    </div>
+              <span className="text-white font-semibold text-sm lg:text-base">
+                +91 83518 46490
+              </span>
+            </a>
+          </div>
 
-                    {/* Mobile CTAs */}
-                    <div className="mt-auto pt-8 space-y-3">
-                        <a
-                            href="tel:+918351846490"
-                            className="flex items-center justify-center gap-3 w-full border border-white text-white font-medium py-3.5 rounded-2xl hover:bg-white transition-all"
-                        >
-                            📞 Call Now
-                        </a>
-
-                        <a
-                            href="tel:+919876543210"
-                            className="flex items-center justify-center gap-3 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 rounded-2xl transition-all"
-                        >
-                            +91 83518 46490
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            {/* Overlay when menu is open */}
-            {open && (
-                <div
-                    className="fixed inset-0 bg-black/40 z-40 md:hidden"
-                    onClick={() => setOpen(false)}
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-white p-2"
+          >
+            {open ? (
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
                 />
+              </svg>
+            ) : (
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
             )}
-        </nav>
-    );
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[85%] sm:w-[380px] bg-[#0f1b2d] z-50 transform transition-transform duration-300 overflow-y-auto ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        
+        <div className="p-6 flex flex-col min-h-full">
+          
+          {/* Top Section */}
+          <div className="flex items-center justify-between mb-8">
+            <img
+              src={logo2}
+              alt="logo"
+              className="h-12 object-contain"
+            />
+
+            <button
+              onClick={() => setOpen(false)}
+              className="text-white text-3xl"
+            >
+              ×
+            </button>
+          </div>
+
+          {/* Mobile Links */}
+          <div className="flex flex-col gap-2">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className="text-white text-lg font-medium px-4 py-3 rounded-xl hover:bg-white/10 transition"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Bottom Button */}
+          <div className="mt-auto pt-8">
+            <a
+              href="tel:+918351846490"
+              className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 transition text-white py-4 rounded-2xl"
+            >
+              <PiPhoneCallFill className="text-2xl" />
+
+              <span className="font-semibold text-lg">
+                +91 83518 46490
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+        ></div>
+      )}
+    </nav>
+  );
 }
 
 export default Navbar;
