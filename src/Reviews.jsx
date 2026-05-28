@@ -105,10 +105,10 @@ function Reviews() {
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <Stars rating={r.rating} />
-                  <span className="text-xs text-gray-400">{r.time}</span>
+                  <span className="text-xs text-white">{r.time}</span>
                 </div>
 
-                <p className="text-gray-700 text-sm md:text-base leading-relaxed break-words">
+                <p className="text-white text-sm md:text-base leading-relaxed break-words">
                   {r.text}
                 </p>
               </div>
@@ -120,10 +120,10 @@ function Reviews() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm md:text-base font-bold text-gray-900">
+                  <h4 className="text-sm md:text-base font-bold text-white">
                     {r.name}
                   </h4>
-                  <p className="text-xs text-gray-400">Verified Traveler</p>
+                  <p className="text-xs text-white  ">Verified Traveler</p>
                 </div>
               </div>
             </div>
