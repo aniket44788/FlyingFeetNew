@@ -19,14 +19,11 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[#0f1b2d] border-b border-white/10 shadow-lg">
-      
-      {/* Navbar Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="flex items-center justify-between h-16 md:h-20">
-          
+
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src={logo2}
               alt="Flying Feet Holidays"
@@ -34,13 +31,13 @@ function Navbar() {
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* NAV LINKS (ONLY DESKTOP LG+) */}
+          <div className="hidden lg:flex items-center gap-4">
             {navLinks.map((item) => (
               <Link
                 key={item.label}
                 to={item.to}
-                className="relative text-white text-sm xl:text-base font-medium px-3 py-2 group transition"
+                className="text-white text-sm xl:text-base font-medium px-2 xl:px-3 py-2 relative group whitespace-nowrap"
               >
                 {item.label}
 
@@ -49,74 +46,48 @@ function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Call Button */}
-          <div className="hidden md:flex items-center">
+          {/* PHONE BUTTON (MD+) ALWAYS RIGHT */}
+          <div className="hidden md:flex items-center ml-auto">
             <a
               href="tel:+918351846490"
-              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 transition px-4 py-2 rounded-full"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 transition px-3 lg:px-4 py-2 rounded-full"
             >
               <PiPhoneCallFill className="text-xl text-white" />
-
-              <span className="text-white font-semibold text-sm lg:text-base">
+              <span className="text-white font-semibold text-sm lg:text-base whitespace-nowrap">
                 +91 83518 46490
               </span>
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-white p-2"
+            className="md:hidden text-white p-2"
           >
             {open ? (
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.5}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.5}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* MOBILE SIDEBAR */}
       <div
         className={`fixed top-0 right-0 h-full w-[85%] sm:w-[380px] bg-[#0f1b2d] z-50 transform transition-transform duration-300 overflow-y-auto ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        
         <div className="p-6 flex flex-col min-h-full">
-          
-          {/* Top Section */}
+
+          {/* TOP */}
           <div className="flex items-center justify-between mb-8">
-            <img
-              src={logo2}
-              alt="logo"
-              className="h-12 object-contain"
-            />
+            <img src={logo2} alt="logo" className="h-12 object-contain" />
 
             <button
               onClick={() => setOpen(false)}
@@ -126,7 +97,7 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Links */}
+          {/* LINKS */}
           <div className="flex flex-col gap-2">
             {navLinks.map((item) => (
               <Link
@@ -140,14 +111,13 @@ function Navbar() {
             ))}
           </div>
 
-          {/* Bottom Button */}
+          {/* CALL BUTTON */}
           <div className="mt-auto pt-8">
             <a
               href="tel:+918351846490"
               className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 transition text-white py-4 rounded-2xl"
             >
               <PiPhoneCallFill className="text-2xl" />
-
               <span className="font-semibold text-lg">
                 +91 83518 46490
               </span>
@@ -156,12 +126,12 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Overlay */}
+      {/* OVERLAY */}
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
-        ></div>
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
+        />
       )}
     </nav>
   );

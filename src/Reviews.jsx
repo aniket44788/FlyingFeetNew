@@ -1,32 +1,80 @@
 import React from "react";
 
+
 const reviews = [
   {
     name: "Rahi Ritik",
-    text: "I recently visited Kareri Lake with Flying Feet Holidays, and it was an amazing experience.",
+    text: "I recently visited Kareri Lake with Flying Feet Holidays, and it was an amazing experience. Everything was well organized.",
     rating: 5,
     time: "3 hours ago",
   },
   {
     name: "Priyanshu Kumar",
-    text: "Great experience and very good hospitality. Guides were very helpful.",
+    text: "Great experience and very good hospitality. Guides were very helpful throughout the trek.",
     rating: 5,
     time: "18 hours ago",
   },
   {
     name: "Palak Kamboj",
-    text: "The Kareri Trek was absolutely wonderful with stunning views.",
+    text: "The Kareri Trek was absolutely wonderful with stunning views and peaceful environment.",
     rating: 5,
     time: "2 days ago",
   },
   {
     name: "Rishu Kamboj",
-    text: "Peaceful, raw and refreshing experience. Highly recommended.",
+    text: "Peaceful, raw and refreshing experience. One of the best treks I have done so far.",
     rating: 5,
     time: "2 days ago",
   },
+  {
+    name: "Sumit Sharma",
+    text: "Excellent arrangement, good food, and very supportive trek leaders. Highly recommended.",
+    rating: 5,
+    time: "3 days ago",
+  },
+  {
+    name: "Anjali Verma",
+    text: "The view from Kareri Lake is breathtaking. Perfect trip for nature lovers.",
+    rating: 5,
+    time: "4 days ago",
+  },
+  {
+    name: "Aman Thakur",
+    text: "Everything was smooth from booking to trek completion. Loved the experience.",
+    rating: 5,
+    time: "5 days ago",
+  },
+  {
+    name: "Neha Sharma",
+    text: "Beautiful location, well-managed camps, and friendly guides made the trip memorable.",
+    rating: 5,
+    time: "1 week ago",
+  },
+  {
+    name: "Rahul Mehta",
+    text: "A bit challenging trek but totally worth it for the scenic beauty.",
+    rating: 4,
+    time: "1 week ago",
+  },
+  {
+    name: "Karan Singh",
+    text: "Amazing adventure with great group coordination and helpful staff.",
+    rating: 5,
+    time: "2 weeks ago",
+  },
+  {
+    name: "Sneha Patil",
+    text: "Loved the peaceful atmosphere and natural beauty of Kareri Lake.",
+    rating: 5,
+    time: "2 weeks ago",
+  },
+  {
+    name: "Vikram Chauhan",
+    text: "Very well organized trek. Food and stay were better than expected.",
+    rating: 5,
+    time: "3 weeks ago",
+  },
 ];
-
 const Stars = ({ rating }) => (
   <div className="flex gap-1 text-yellow-400 text-sm">
     {Array.from({ length: 5 }).map((_, i) => (
@@ -37,8 +85,8 @@ const Stars = ({ rating }) => (
 
 function Reviews() {
   return (
-    <div className="w-full bg-gray-50 py-14">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-800">
+    <div className="w-full bg-[#0f1b2d]  py-14">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-red-800">
         What Our Travelers Say
       </h2>
 
@@ -49,7 +97,7 @@ function Reviews() {
             <div
               key={index}
               className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0
-              bg-white rounded-2xl shadow-md border border-gray-100
+               rounded-2xl shadow-md border border-gray-100
               p-5 flex flex-col justify-between
               hover:shadow-xl transition-all duration-300"
             >

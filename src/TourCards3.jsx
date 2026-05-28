@@ -43,7 +43,7 @@ export const tours = [
 export default function TourCards3() {
     return (
         <>
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full bg-[#0f1b2d] flex items-center justify-center">
                 <h4 className="text-2xl mt-5 sm:text-3xl lg:text-5xl leading-[1.05] font-black text-white text-center">
                     <span className="text-red-500">
                         Weekend Trips 
@@ -51,7 +51,7 @@ export default function TourCards3() {
                 </h4>
 
             </div>
-            <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 rounded-2xl">
+            <div className="max-w-7xl mx-auto bg-[#0f1b2d] px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 {tours.map((tour) => (
                     <div
@@ -126,7 +126,7 @@ export default function TourCards3() {
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center bg-[#0f1b2d] ">
                 <button className="w-[80%] mb-5 text-white bg-red-500 hover:bg-red-600 transition px-4 py-2 rounded-lg text-sm sm:text-base">
                     Explore more weekendtrips
                 </button>

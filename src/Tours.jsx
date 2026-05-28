@@ -35,8 +35,8 @@ const Tours = () => {
 
         {/* ================= HERO CONTENT ================= */}
 
-        <div className="relative z-20 max-w-7xl h-[500px] mx-auto px-4 sm:px-6 lg:px-10 py-10 lg:py-14 flex items-start">
-          <div className="max-w-2xl w-full"> 
+        <div className="relative z-20 max-w-7xl h-[500px] mx-auto px-4 sm:px-6 lg:px-4 py-10 lg:py-14 flex items-start">
+          <div className=" w-full"> 
 
           
             {/* HEADING */}
@@ -58,7 +58,7 @@ const Tours = () => {
             </p>
 
             {/* SEARCH BOX */}
-            <div className="mt-5 bg-white rounded-[24px] p-3 shadow-[0_15px_40px_rgba(0,0,0,0.2)]">
+            <div className="mt-5 bg-white rounded-[24px] p-5 shadow-[0_15px_40px_rgba(0,0,0,0.2)]">
 
               {/* SEARCH AREA */}
               <div className="flex flex-col sm:flex-row gap-3">
