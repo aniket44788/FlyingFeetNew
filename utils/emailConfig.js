@@ -5,3 +5,4 @@ export const EMAIL_CONFIG = {
   TEMPLATE_ID: "template_hy3cy8d",
   PUBLIC_KEY: "GwTM7Gy-N7kgmfsnV",
 };
+  

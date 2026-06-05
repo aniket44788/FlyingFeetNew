@@ -26,6 +26,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        
         <Route path="/packages" element={<Packages />} />
         <Route path="/destinations" element={<Destination />} />
         <Route path="/about" element={<About />} />
@@ -40,6 +42,9 @@ function App() {
         <Route path="/treks/thatharana-trek" element={<Thatharnatrek />} />
         <Route path="/treks/sar-pass-trek" element={<Sarpastrek />} />
         <Route path="/treks/nag-tibba-trek" element={<Nagtibbatrek />} />
+
+
+
         <Route path="/weekendtrips" element={<WeekendTrips />} />
         <Route path="/domestictours" element={<DomesticTours />} />
         <Route path="/internationaltours" element={<Internationaltours />} />
