@@ -1,42 +1,45 @@
 import triund from "../src/assets/Swipper/triund.jpg";
+import shimla from "../src/assets/Swipper/shimla.jpg";
+import dshala from "../src/assets/Swipper/dshala.jpg";
+
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 export const tours = [
   {
     id: 1,
-    title: "Shimla Hill Station Tour",
-    location: "Shimla, Himachal Pradesh",
-    duration: "3D/2N",
+    title: "Shimla Manali Tour",
+    location: "Himachal Pradesh",
+    duration: "6D/5N",
     rating: 4.7,
     reviews: 180,
-    price: 4999,
-    image: triund,
-    features: ["Hotel Stay Included", "Sightseeing Included"],
+    price: 12500,
+    image: shimla,
+    features: ["Hotel Stay Included", "Sightseeing Included" ,"Pickup & Drop Included"],
     tagColor: "bg-red-500",
   },
   {
     id: 2,
-    title: "Manali Adventure Package",
-    location: "Manali, Himachal Pradesh",
-    duration: "4D/3N",
+    title: "Kashmir Tour Package",
+    location: "Kashmir",
+    duration: "6D/5N",
     rating: 4.8,
     reviews: 240,
-    price: 6999,
+    price: 18500,
     image: triund,
-    features: ["Snow Activities", "Volvo Bus Included"],
+    features: ["Hotel Stay Included", "Sightseeing Included" ,"Pickup & Drop Included"],
     tagColor: "bg-red-500",
   },
   {
     id: 3,
-    title: "Kullu Valley Tour",
-    location: "Kullu, Himachal Pradesh",
-    duration: "3D/2N",
+    title: "Dharamshala Dalhousie Tour Package",
+    location: "Himachal Pradesh",
+    duration: "6D/5N",
     rating: 4.6,
     reviews: 140,
-    price: 3999,
-    image: triund,
-    features: ["River Rafting", "Hotel Stay Included"],
+    price: 12500,
+    image: dshala,
+    features: ["Hotel Stay Included", "Sightseeing Included" ,"Pickup & Drop Included"],
     tagColor: "bg-red-500",
   },
 ];
