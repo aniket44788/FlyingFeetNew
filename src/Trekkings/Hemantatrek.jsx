@@ -399,7 +399,7 @@ const Hamptatrek = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/8351846490?text=Hi, I'm interested in ${trek.name}${selectedDate ? ` on ${selectedDate}` : ""}`,
+                      `https://wa.me/+918351846490?text=Hi, I'm interested in ${trek.name}${selectedDate ? ` on ${selectedDate}` : ""}`,
                       "_blank"
                     )
                   }

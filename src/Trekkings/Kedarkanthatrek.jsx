@@ -407,7 +407,7 @@ const Kedarkanthatrek = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/8351846490?text=Hi, I'm interested in ${trek.name} for ${selectedPeople} person(s)${selectedDate ? ` on ${selectedDate}` : ""}`,
+                      `https://wa.me/+918351846490?text=Hi, I'm interested in ${trek.name} for ${selectedPeople} person(s)${selectedDate ? ` on ${selectedDate}` : ""}`,
                       "_blank"
                     )
                   }
