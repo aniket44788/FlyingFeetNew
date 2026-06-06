@@ -6,7 +6,7 @@ export const tours = [
   {
     id: 1,
     title: "Triund Trek",
-    location: "Himachal Pradesh",
+    location: "Mcleodganj Himachal Pradesh",
     duration: "2D/1N",
     rating: 4.8,
     reviews: 120,
@@ -18,7 +18,7 @@ export const tours = [
   {
     id: 2,
     title: "Kedarkantha Trek",
-    location: "Uttarakhand",
+    location: "Uttarkashi Uttarakhand",
     duration: "5D/4N",
     rating: 4.9,
     reviews: 150,
@@ -30,7 +30,7 @@ export const tours = [
   {
     id: 3,
     title: "Hampta Pass Trek",
-    location: "Himachal Pradesh",
+    location: "Manali Himachal Pradesh",
     duration: "5D/4N",
     rating: 4.8,
     reviews: 100,
