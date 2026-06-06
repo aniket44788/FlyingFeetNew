@@ -1,4 +1,5 @@
 import triund from "../src/assets/Swipper/triund.jpg";
+import kashmir from "../src/assets/Swipper/kashmir.jpg"
 import shimla from "../src/assets/Swipper/shimla.jpg";
 import dshala from "../src/assets/Swipper/dshala.jpg";
 
@@ -26,7 +27,7 @@ export const tours = [
     rating: 4.8,
     reviews: 240,
     price: 18500,
-    image: triund,
+    image: kashmir,
     features: ["Hotel Stay Included", "Sightseeing Included" ,"Pickup & Drop Included"],
     tagColor: "bg-red-500",
   },
