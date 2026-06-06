@@ -26,7 +26,7 @@ export const tours = [
     duration: "6D/5N",
     rating: 4.8,
     reviews: 240,
-    price: 18500,
+    price: 18500, 
     image: kashmir,
     features: ["Hotel Stay Included", "Sightseeing Included" ,"Pickup & Drop Included"],
     tagColor: "bg-red-500",
