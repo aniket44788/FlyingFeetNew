@@ -10,74 +10,92 @@ const PUBLIC_KEY = "GwTM7Gy-N7kgmfsnV";
 const trek = {
   name: "Kedarkantha Trek",
   state: "Uttarakhand",
-  duration: "5D / 4N",
+  duration: "5 Days / 4 Nights",
   difficulty: "Easy to Moderate",
   altitude: "12,500 ft",
   season: "Dec – Apr",
-  startPoint: "Sankri (via Dehradun)",
+  startPoint: "Dehradun to Dehradun",
   price: 5500,
   rating: 4.9,
   reviews: 150,
   overview:
-    "Kedarkantha Trek is one of the most popular winter treks in Uttarakhand, known for its stunning snow-covered trails, dense pine forests, and breathtaking summit views. It is perfect for beginners as well as experienced trekkers looking for a Himalayan winter adventure.",
+    "Kedarkantha is one of India's most stunning winter treks, famous for its beautiful pine forests, frozen lakes, and a dramatic 360-degree view of the snow-capped Himalayan peaks from the summit.",
   highlights: [
-    "Snow trekking experience",
-    "360° summit panoramic view",
-    "Dense pine forest trails",
-    "Camping in snow",
-    "Beautiful sunrise from summit",
-    "Pristine alpine meadows",
+    "360° panoramic view from the summit",
+    "Trek through dense pine & oak forests",
+    "Camp next to frozen Juda-ka-Talab lake",
+    "Golden sunrise over the Himalayas",
+    "Snow trekking experience with microspikes",
+    "Views of Swargarohini, Black Peak & Bandarpoonch",
   ],
-  inclusions: ["Transport (Dehradun ↔ Sankri)", "All Meals", "Trek Guide", "Camping", "Sleeping Bags"],
-  exclusions: ["Personal Expenses", "Travel Insurance", "Porter Charges"],
+  inclusions: [
+    "Transport: Dehradun to Sankri and back",
+    "Accommodation: Homestay in Sankri & premium alpine tents",
+    "Meals: All nutritious veg meals (Day 1 dinner to Day 5 breakfast)",
+    "Expert Team: Certified Trek Leaders & local guides",
+    "Safety Gear: First aid kits, oxygen cylinders, microspikes & gaiters",
+  ],
+  exclusions: [
+    "Personal trekking gear (backpacks, poles, warm clothes)",
+    "Offloading charges (mule/porter for backpack)",
+    "Travel Insurance",
+    "Expenses due to unexpected weather delays",
+  ],
   itinerary: [
     {
       day: 1,
-      title: "Dehradun → Sankri",
+      title: "Dehradun → Sankri (Drive)",
       activities: [
-        "Pickup from Dehradun early morning",
-        "Scenic drive through Mussoorie & Purola",
-        "Arrive at Sankri village — overnight stay",
-        "Trek briefing & gear check",
+        "190 km drive (Approx. 7-8 hours)",
+        "Drive alongside Yamuna and Tons rivers",
+        "Pass through beautiful hill stations like Mussoorie",
+        "Gorgeous pine forests near Mori",
+        "Overnight stay in cozy local homestay/guesthouse with traditional dinner",
       ],
     },
     {
       day: 2,
-      title: "Sankri → Juda Ka Talab",
+      title: "Sankri → Juda-ka-Talab (Trek)",
       activities: [
-        "Start trek from Sankri (6,400 ft)",
-        "Walk through dense oak & pine forests",
-        "Reach Juda Ka Talab campsite (9,100 ft)",
-        "Overnight camping under the stars",
+        "4 km trek (Approx. 4 hours)",
+        "Trail begins through dense oak and pine forests",
+        "Start encountering snow during winters",
+        "Reach Juda-ka-Talab - a high-altitude frozen lake",
+        "Camping under clear starlit sky next to the frozen lake",
       ],
     },
     {
       day: 3,
-      title: "Juda Ka Talab → Kedarkantha Base Camp",
+      title: "Juda-ka-Talab → Kedarkantha Base Camp (Trek)",
       activities: [
-        "Gradual ascent through snow-covered trails",
-        "Snow treelines begin from this stretch",
-        "Arrive at Kedarkantha Base Camp (11,250 ft)",
-        "Acclimatisation walk around the camp",
+        "4 km trek (Approx. 3 hours)",
+        "Mesmerizing trek through vast snow-covered meadows",
+        "Majestic Kedarkantha Peak becomes clearly visible",
+        "Snow camping at the Base Camp",
+        "Guides provide microspikes and gaiters for summit push",
       ],
     },
     {
       day: 4,
-      title: "Summit Day → Descent to Sankri",
+      title: "Base Camp → Kedarkantha Peak → Pricegaon / Hargaon (Summit Day)",
       activities: [
-        "Pre-dawn start for summit push (4:00 AM)",
-        "Reach Kedarkantha Summit (12,500 ft)",
-        "360° views of Swargarohini, Bandarpunch & Kinner Kailash",
-        "Descend back to Sankri via Hargaon",
+        "6 km trek (Approx. 6-7 hours)",
+        "Early start around 3:00 AM - climb under stars with headlamps",
+        "Reach summit just in time for spectacular golden sunrise",
+        "Panoramic view of Swargarohini, Black Peak & Bandarpoonch",
+        "Descend to beautiful meadows of Pricegaon or Hargaon",
+        "Relaxed final night of camping in the mountains",
       ],
     },
     {
       day: 5,
-      title: "Sankri → Dehradun",
+      title: "Hargaon/Pricegaon → Sankri (Trek) → Dehradun (Drive)",
       activities: [
-        "Morning free for leisure at Sankri",
-        "Drive back to Dehradun",
-        "Trip concludes by evening",
+        "4 km descent (3 hours) + 7-8 hours drive back to Dehradun",
+        "Peaceful descent through open clearing and forest trails",
+        "Arrive back to Sankri village",
+        "Board vehicle and drive back to Dehradun",
+        "Reach Dehradun by late evening - journey concludes",
       ],
     },
   ],
@@ -93,14 +111,14 @@ const quickInfoItems = [
   { icon: "📶", label: "Difficulty", value: trek.difficulty },
   { icon: "⛰️", label: "Max Altitude", value: trek.altitude },
   { icon: "🌤️", label: "Best Season", value: trek.season },
-  { icon: "📍", label: "Start Point", value: trek.startPoint },
+  { icon: "📍", label: "Start/End Point", value: trek.startPoint },
 ];
 
 const galleryImages = [
   "https://images.pexels.com/photos/2101136/pexels-photo-2101136.jpeg?auto=compress&cs=tinysrgb&w=800",
-
-  "https://images.pexels.com/photos/2101136/pexels-photo-2101136.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "https://images.pexels.com/photos/2084795/pexels-photo-2084795.jpeg?auto=compress&cs=tinysrgb&w=800",
   "https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "https://images.pexels.com/photos/2101136/pexels-photo-2101136.jpeg?auto=compress&cs=tinysrgb&w=800",
 ];
 
 const Kedarkanthatrek = () => {
@@ -187,7 +205,7 @@ const Kedarkanthatrek = () => {
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-2">
-              Kedarkantha Trek
+              🏔️ Kedarkantha Trek
             </h1>
             <div className="flex flex-wrap gap-3 text-white/70 text-xs sm:text-sm">
               <span>📍 {trek.state}, India</span>
@@ -305,8 +323,9 @@ const Kedarkanthatrek = () => {
                   </h3>
                   <ul className="space-y-2.5">
                     {trek.inclusions.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2.5 text-sm text-white/70">
-                        <span className="text-green-400 font-bold">✓</span> {item}
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
+                        <span className="text-green-400 font-bold mt-0.5">✓</span> 
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -318,8 +337,9 @@ const Kedarkanthatrek = () => {
                   </h3>
                   <ul className="space-y-2.5">
                     {trek.exclusions.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2.5 text-sm text-white/70">
-                        <span className="text-red-400 font-bold">✕</span> {item}
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
+                        <span className="text-red-400 font-bold mt-0.5">✕</span> 
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -381,7 +401,8 @@ const Kedarkanthatrek = () => {
                 {/* Price Breakdown */}
                 <div className="bg-gray-50 rounded-xl p-4 space-y-2">
                   <div className="flex justify-between text-sm">
-               
+                    <span className="text-gray-600">Base price</span>
+                    <span className="font-semibold">₹{trek.price.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Taxes & fees</span>
@@ -389,6 +410,7 @@ const Kedarkanthatrek = () => {
                   </div>
                   <div className="border-t border-gray-200 pt-2 mt-1 flex justify-between font-bold">
                     <span>Total</span>
+                    <span className="text-red-600">₹{trek.price.toLocaleString()}</span>
                   </div>
                 </div>
 
@@ -464,7 +486,7 @@ const Kedarkanthatrek = () => {
                 <div className="p-4">
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="font-bold text-sm sm:text-base text-gray-800 leading-snug">{t.name}</h3>
-
+                    <span className="text-red-600 font-black text-base whitespace-nowrap">₹{t.price.toLocaleString()}</span>
                   </div>
                   <p className="text-sm text-gray-500 flex items-center gap-1 mt-1">📍 {t.location}</p>
                   <div className="flex items-center gap-2 mt-2 text-sm">
@@ -521,7 +543,11 @@ const Kedarkanthatrek = () => {
                 </svg>
                 <span className="text-red-700 font-medium text-sm">{trek.name}</span>
               </div>
-           
+              <div className="flex gap-2 text-xs text-gray-500">
+                <span>👥 {selectedPeople} persons</span>
+                {selectedDate && <span>📅 {selectedDate}</span>}
+                <span>💰 ₹{total.toLocaleString()}</span>
+              </div>
             </div>
 
             {/* Form */}

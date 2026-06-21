@@ -10,44 +10,44 @@ const trek = {
   state: "Himachal Pradesh",
   duration: "2D / 1N",
   difficulty: "Easy",
-  altitude: "9350 ft",
+  altitude: "9,350 ft",
   season: "Mar – Jun, Sep – Dec",
   startPoint: "McLeodganj",
   price: 999,
   rating: 4.8,
   reviews: 180,
   overview:
-    "Triund Trek is one of the most popular treks in Himachal Pradesh. It offers stunning views of the Dhauladhar range and is perfect for beginners looking for a short Himalayan adventure. The trail winds through dense rhododendron and oak forests before opening up to sweeping panoramas of the entire Kangra Valley below.",
+    "Triund Trek is one of the most popular treks in Himachal Pradesh. It offers breathtaking views of the Dhauladhar Range and Kangra Valley. Perfect for beginners and weekend adventurers.",
   highlights: [
     "Stunning views of Dhauladhar Range",
     "Perfect beginner trek",
     "Camping under the stars",
     "Sunrise & sunset panoramas",
     "Guided forest trail walk",
-    "Fully catered camp meals",
+    "Fresh mountain air experience",
   ],
-  inclusions: ["Transport", "All Meals", "Trek Guide", "Camping Equipment", "Sleeping Bags"],
+  inclusions: ["Trek Guide", "Camping Equipment", "Sleeping Bags", "Dinner & Breakfast", "First Aid Support"],
   exclusions: ["Personal Expenses", "Travel Insurance", "Any kind of drinks"],
   itinerary: [
     {
       day: 1,
       title: "McLeodganj → Triund Top",
       activities: [
-        "Early morning assembly at McLeodganj (9:00 AM)",
-        "Trek through dense rhododendron forest trails (4-5 hrs)",
-        "Arrive at Triund Top — set up camp",
-        "Sunset views over the Kangra Valley",
-        "Bonfire & dinner under starlit sky",
+        "Reporting at McLeodganj (9:00 AM)",
+        "Trek through rhododendron & oak forests (4–5 hrs)",
+        "Reach Triund campsite",
+        "Sunset views & leisure time",
+        "Dinner and overnight camping",
       ],
     },
     {
       day: 2,
       title: "Triund Top → McLeodganj",
       activities: [
-        "Wake up to golden Himalayan sunrise",
-        "Hot breakfast at camp with mountain views",
-        "Leisurely descent back to McLeodganj",
-        "Trip concludes by afternoon (1:00 PM)",
+        "Sunrise experience",
+        "Breakfast at campsite",
+        "Descend back to McLeodganj",
+        "Trip concludes by afternoon",
       ],
     },
   ],
@@ -58,7 +58,7 @@ const trek = {
 };
 
 const quickInfoItems = [
-  { icon: "⏱️", label: "Duration", value: trek.duration },
+  { icon: "⏳", label: "Duration", value: trek.duration },
   { icon: "📶", label: "Difficulty", value: trek.difficulty },
   { icon: "⛰️", label: "Altitude", value: trek.altitude },
   { icon: "🌤️", label: "Best Season", value: trek.season },
@@ -154,7 +154,7 @@ const Triundtrek = () => {
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-2">
-              Triund Trek
+              🏔️ Triund Trek
             </h1>
             <div className="flex flex-wrap gap-3 text-white/70 text-xs sm:text-sm">
               <span>📍 {trek.state}, India</span>
@@ -279,7 +279,7 @@ const Triundtrek = () => {
                 <div className="bg-white/5 border border-green-500/20 rounded-2xl p-5 sm:p-6">
                   <h3 className="font-bold text-green-400 mb-4 flex items-center gap-2 text-sm sm:text-base">
                     <span className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-xs">✓</span>
-                    What's Included
+                    Inclusions
                   </h3>
                   <ul className="space-y-2.5">
                     {trek.inclusions.map((item, i) => (
@@ -292,7 +292,7 @@ const Triundtrek = () => {
                 <div className="bg-white/5 border border-red-500/20 rounded-2xl p-5 sm:p-6">
                   <h3 className="font-bold text-red-400 mb-4 flex items-center gap-2 text-sm sm:text-base">
                     <span className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs">✕</span>
-                    What's Excluded
+                    Exclusions
                   </h3>
                   <ul className="space-y-2.5">
                     {trek.exclusions.map((item, i) => (
@@ -308,115 +308,112 @@ const Triundtrek = () => {
           </div>
 
           {/* RIGHT COLUMN — Booking Card */}
-         
-         <div className="lg:col-span-4">
-  <div className="sticky top-6 bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-    
-    {/* Price Header with Badge */}
-    <div className="bg-gradient-to-br from-red-500 via-red-600 to-red-700 p-5 sm:p-6 text-white relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
-      
-      <div className="relative z-10">
-        <div className="flex items-baseline gap-1 mb-2">
-          <span className="text-4xl sm:text-5xl font-black tracking-tight">₹{trek.price.toLocaleString()}</span>
-          <span className="text-red-100 text-sm font-medium">/ person</span>
-        </div>
-        
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-red-100 text-xs">
-          <div className="flex items-center gap-1">
-            <svg className="w-3.5 h-3.5 text-yellow-300 fill-current" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-            </svg>
-            <span className="font-semibold">{trek.rating}</span>
-            <span className="text-red-200">· {trek.reviews}+ reviews</span>
+          <div className="lg:col-span-4">
+            <div className="sticky top-6 bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+              
+              {/* Price Header with Badge */}
+              <div className="bg-gradient-to-br from-red-500 via-red-600 to-red-700 p-5 sm:p-6 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-baseline gap-1 mb-2">
+                    <span className="text-4xl sm:text-5xl font-black tracking-tight">₹{trek.price.toLocaleString()}</span>
+                    <span className="text-red-100 text-sm font-medium">/ person</span>
+                  </div>
+                  
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-red-100 text-xs">
+                    <div className="flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-yellow-300 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <span className="font-semibold">{trek.rating}</span>
+                      <span className="text-red-200">· {trek.reviews}+ reviews</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span>Instant confirmation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-5 sm:p-6 space-y-5">
+                
+                {/* Features List */}
+                <div className="space-y-3 pb-3 border-b border-gray-100">
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Best price guarantee</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Free cancellation available</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <span>24/7 customer support</span>
+                  </div>  
+                </div>
+
+                {/* Price Breakdown */}
+                <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Base price</span>
+                    <span className="font-semibold">₹{trek.price.toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Taxes & fees</span>
+                    <span className="font-semibold text-green-600">Included</span>
+                  </div>
+                  <div className="border-t border-gray-200 pt-2 mt-1">
+                    <div className="flex justify-between font-bold">
+                      <span>Total</span>
+                      <span className="text-red-600">₹{trek.price.toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Book Now CTA */}
+                <button
+                  onClick={() => setShowEnquiry(true)}
+                  className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-4 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-red-200 text-sm flex items-center justify-center gap-2 group"
+                >
+                  <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6M17 13l1.5 6M9 21h6M12 18v3"/>
+                  </svg>
+                  Book Now
+                </button>
+
+                {/* Trust Badges */}
+                <div className="flex justify-center gap-4 pt-2">
+                  <div className="flex items-center gap-1 text-xs text-gray-400">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                    </svg>
+                    <span>Secure booking</span>
+                  </div>
+                  <div className="w-px h-3 bg-gray-300 my-auto"></div>
+                  <div className="flex items-center gap-1 text-xs text-gray-400">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <span>Easy refunds</span>
+                  </div>
+                </div>
+
+                <p className="text-xs text-gray-400 text-center">Free cancellation up to 7 days before departure</p>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-1">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span>Instant confirmation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="p-5 sm:p-6 space-y-5">
-      
-      {/* Features List */}
-      <div className="space-y-3 pb-3 border-b border-gray-100">
-        <div className="flex items-center gap-3 text-sm text-gray-600">
-          <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <span>Best price guarantee</span>
-        </div>
-        <div className="flex items-center gap-3 text-sm text-gray-600">
-          <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <span>Free cancellation available</span>
-        </div>
-        <div className="flex items-center gap-3 text-sm text-gray-600">
-          <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-          </svg>
-          <span>24/7 customer support</span>
-        </div>  
-      </div>
-
-     
-      {/* Price Breakdown */}
-      <div className="bg-gray-50 rounded-xl p-4 space-y-2">
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Base price</span>
-          <span className="font-semibold">₹{trek.price.toLocaleString()}</span>
-        </div>
-        <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Taxes & fees</span>
-          <span className="font-semibold text-green-600">Included</span>
-        </div>
-        <div className="border-t border-gray-200 pt-2 mt-1">
-          <div className="flex justify-between font-bold">
-            <span>Total</span>
-            <span className="text-red-600">₹{trek.price.toLocaleString()}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Book Now CTA */}
-      <button
-        onClick={() => setShowEnquiry(true)}
-        className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-4 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-red-200 text-sm flex items-center justify-center gap-2 group"
-      >
-        <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6M17 13l1.5 6M9 21h6M12 18v3"/>
-        </svg>
-        Book Now
-      </button>
-
-      {/* Trust Badges */}
-      <div className="flex justify-center gap-4 pt-2">
-        <div className="flex items-center gap-1 text-xs text-gray-400">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-          </svg>
-          <span>Secure booking</span>
-        </div>
-        <div className="w-px h-3 bg-gray-300 my-auto"></div>
-        <div className="flex items-center gap-1 text-xs text-gray-400">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-          </svg>
-          <span>Easy refunds</span>
-        </div>
-      </div>
-
-      <p className="text-xs text-gray-400 text-center">Free cancellation up to 7 days before departure</p>
-    </div>
-  </div>
-</div>
 
         </div>
       </div>
@@ -494,7 +491,6 @@ const Triundtrek = () => {
                 </svg>
                 <span className="text-red-700 font-medium text-sm">{trek.name}</span>
               </div>
-
             </div>
 
             {/* Form */}
