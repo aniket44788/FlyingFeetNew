@@ -334,7 +334,7 @@ const Thatharnatrek = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      `https://wa.me/919876543210?text=Hi, I'm interested in Thatharana Trek for ${selectedPeople} person(s)`,
+                      `https://wa.me/918351846490?text=Hi, I'm interested in Thatharana Trek for ${selectedPeople} person(s)`,
                       "_blank"
                     )
                   }
