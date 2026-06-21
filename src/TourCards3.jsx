@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import triund from "../src/assets/Swipper/triund.jpg"
 import mclo from "../src/assets/mclo.jpeg"
-
+import jibhi from "../src/assets/jibhi.jpeg"
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
@@ -27,7 +27,7 @@ export const tours = [
     rating: 4.7,
     reviews: 150,
     price: 6500,
-    image: triund,
+    image: jibhi,
     features: ["River Stay", "Waterfall Visit", "Nature Walks"],
     tagColor: "bg-red-500"
   },
