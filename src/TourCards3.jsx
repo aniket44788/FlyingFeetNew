@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import triund from "../src/assets/Swipper/triund.jpg"
 import mclo from "../src/assets/mclo.jpeg"
 import jibhi from "../src/assets/jibhi.jpeg"
+import tungnath from "../src/assets/tungnath.jpeg"
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
@@ -39,7 +40,7 @@ export const tours = [
     rating: 4.9,
     reviews: 210,
     price: 5999,
-    image: triund,
+    image: tungnath,
     features: ["Temple Trek", "Snow Views", "Camping Included"],
     tagColor: "bg-red-500"
   },
