@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import kedarkantha from "../src/assets/kedarkantha.jpeg"
 import hamptapass from "../src/assets/hamptapass.jpeg"
+import karerilake from "../src/assets/karerilake.jpeg"
 
 import animemountain from "./assets/animemountain.png";
 import atal from "./assets/atal.png";
@@ -12,7 +13,7 @@ const treks = [
     name: "Triund Trek",
     state: "Himachal Pradesh",
     duration: "2D / 1N",
-    price: 2999,
+    price: 999,
     rating: 4.8,
     reviews: 120,
     image: animemountain,
@@ -23,7 +24,7 @@ const treks = [
     name: "Kedarkantha Trek",
     state: "Uttarakhand",
     duration: "6D / 5N",
-    price: 8999,
+    price: 7999,
     rating: 4.9,
     reviews: 150,
     image: kedarkantha,
@@ -34,7 +35,7 @@ const treks = [
     name: "Hampta Pass Trek",
     state: "Himachal Pradesh",
     duration: "5D / 4N",
-    price: 7999,
+    price: 5999,
     rating: 4.8,
     reviews: 100,
     image: hamptapass,
@@ -48,7 +49,7 @@ const treks = [
     price: 1500,
     rating: 4.7,
     reviews: 140,
-    image: atal,
+    image: karerilake,
     detailUrl: "/treks/kareri-lake-trek",
   },
   {
