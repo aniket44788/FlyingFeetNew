@@ -1,6 +1,9 @@
 import triund from "../src/assets/Swipper/triund.jpg";
+import kedarkantha from "../src/assets/kedarkantha.jpeg";
+import hamptapass from "../src/assets/hampatapass.jpeg";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const tours = [
   {
@@ -10,10 +13,11 @@ export const tours = [
     duration: "2D/1N",
     rating: 4.8,
     reviews: 120,
-    price:   999,
+    price: 999,
     image: triund,
     features: ["Meals Included", "Guide Included"],
     tagColor: "bg-red-500",
+    link: "/treks/triund-trek",
   },
   {
     id: 2,
@@ -23,9 +27,10 @@ export const tours = [
     rating: 4.9,
     reviews: 150,
     price: 7999,
-    image: triund,
+    image: kedarkantha,
     features: ["Meals Included", "Guide Included"],
     tagColor: "bg-red-500",
+    link: "/treks/kedarkantha-trek",
   },
   {
     id: 3,
@@ -35,9 +40,10 @@ export const tours = [
     rating: 4.8,
     reviews: 100,
     price: 5999,
-    image: triund,
+    image: hamptapass,
     features: ["Meals Included", "Guide Included"],
     tagColor: "bg-red-500",
+    link: "/treks/hampta-pass-trek",
   },
 ];
 
@@ -72,7 +78,7 @@ export default function TourCards2() {
           destination: selectedTour,
           message: formData.message,
         },
-        EMAIL_CONFIG.PUBLIC_KEY
+        EMAIL_CONFIG.PUBLIC_KEY,
       );
 
       alert("Enquiry Sent Successfully!");
@@ -123,7 +129,9 @@ export default function TourCards2() {
                 {/* CONTENT */}
                 <div className="p-4">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-lg font-bold text-gray-800">{tour.title}</h2>
+                    <h2 className="text-lg font-bold text-gray-800">
+                      {tour.title}
+                    </h2>
                     <h3 className="text-xl font-black text-red-600">
                       ₹{tour.price.toLocaleString()}
                     </h3>
@@ -134,26 +142,38 @@ export default function TourCards2() {
                   </p>
 
                   <div className="flex items-center gap-2 mt-2 text-sm">
-                    <span className="text-yellow-500 font-semibold">⭐ {tour.rating}</span>
-                    <span className="text-gray-500">({tour.reviews} reviews)</span>
+                    <span className="text-yellow-500 font-semibold">
+                      ⭐ {tour.rating}
+                    </span>
+                    <span className="text-gray-500">
+                      ({tour.reviews} reviews)
+                    </span>
                   </div>
 
                   <div className="mt-3 space-y-1">
                     {tour.features.map((feat, i) => (
-                      <p key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                      <p
+                        key={i}
+                        className="text-sm text-gray-600 flex items-center gap-2"
+                      >
                         <span className="text-green-500">✔</span> {feat}
                       </p>
                     ))}
                   </div>
 
                   {/* BUTTONS */}
-                  <div className="flex gap-2 mt-4">
-                    <button className="flex-1 bg-blue-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
+
+                  <div className="flex gap-3 mt-4">
+                    <Link
+                      to={tour.link}
+                      className="flex-[2] text-center bg-blue-600 text-white py-3 px-4 rounded-xl text-sm md:text-base font-semibold hover:bg-blue-700 transition-all duration-300"
+                    >
                       View Details
-                    </button>
+                    </Link>
+
                     <button
                       onClick={() => openEnquiry(tour.title)}
-                      className="flex-1 bg-red-500 text-white py-2 rounded-lg text-sm font-medium hover:bg-red-600"
+                      className="flex-1 bg-red-500 text-white py-3 px-4 rounded-xl text-sm md:text-base font-semibold hover:bg-red-600 transition-all duration-300"
                     >
                       Book Now
                     </button>
@@ -176,7 +196,6 @@ export default function TourCards2() {
       {showPopup && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-all duration-300">
           <div className="bg-white rounded-3xl w-full max-w-md relative animate-in fade-in zoom-in duration-300 shadow-2xl">
-
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
@@ -188,13 +207,19 @@ export default function TourCards2() {
             {/* Header */}
             <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-t-3xl p-6 text-white">
               <h2 className="text-2xl font-bold mb-1">Travel Enquiry</h2>
-              <p className="text-red-100 text-sm">Let's plan your dream journey</p>
+              <p className="text-red-100 text-sm">
+                Let's plan your dream journey
+              </p>
             </div>
 
             {/* Selected Tour Badge */}
             <div className="px-6 pt-4">
               <div className="bg-red-50 border border-red-200 rounded-xl p-3 flex items-center gap-2">
-                <svg className="w-5 h-5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-5 h-5 text-red-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M10 2a6 6 0 00-6 6c0 2.887 1.474 5.523 3.5 7.5A8.5 8.5 0 0010 18a8.5 8.5 0 003.5-2.5c2.026-1.977 3.5-4.613 3.5-7.5a6 6 0 00-6-6zm0 8a2 2 0 100-4 2 2 0 000 4z" />
                 </svg>
                 <span className="text-red-700 font-medium text-sm break-all">
@@ -205,7 +230,6 @@ export default function TourCards2() {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
-
               {/* Full Name */}
               <div className="relative">
                 <input
@@ -213,12 +237,16 @@ export default function TourCards2() {
                   placeholder=" "
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="peer w-full border-2 border-gray-200 rounded-xl px-4 pt-6 pb-2 focus:border-red-500 focus:outline-none transition-colors"
                 />
-                <label className="absolute left-3 bg-white px-1 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200 pointer-events-none
+                <label
+                  className="absolute left-3 bg-white px-1 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200 pointer-events-none
                   peer-focus:top-0 peer-focus:text-xs peer-focus:text-red-500
-                  peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs">
+                  peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                >
                   Full Name
                 </label>
               </div>
@@ -230,12 +258,16 @@ export default function TourCards2() {
                   placeholder=" "
                   required
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
                   className="peer w-full border-2 border-gray-200 rounded-xl px-4 pt-6 pb-2 focus:border-red-500 focus:outline-none transition-colors"
                 />
-                <label className="absolute left-3 bg-white px-1 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200 pointer-events-none
+                <label
+                  className="absolute left-3 bg-white px-1 top-1/2 -translate-y-1/2 text-gray-500 transition-all duration-200 pointer-events-none
                   peer-focus:top-0 peer-focus:translate-y-[-50%] peer-focus:text-xs peer-focus:text-red-500
-                  peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-[-50%] peer-[:not(:placeholder-shown)]:text-xs">
+                  peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-[-50%] peer-[:not(:placeholder-shown)]:text-xs"
+                >
                   Phone Number
                 </label>
               </div>
@@ -247,13 +279,17 @@ export default function TourCards2() {
                   placeholder=" "
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="peer w-full border-2 border-gray-200 rounded-xl px-4 pt-6 pb-2 focus:border-red-500 focus:outline-none transition-colors"
                 />
-                <label className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 bg-white px-1 transition-all duration-200
+                <label
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 bg-white px-1 transition-all duration-200
                   peer-focus:top-0 peer-focus:text-xs peer-focus:text-red-500
                   peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs
-                  pointer-events-none">
+                  pointer-events-none"
+                >
                   Email Address
                 </label>
               </div>
@@ -264,13 +300,17 @@ export default function TourCards2() {
                   placeholder=" "
                   rows="4"
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="w-full border-2 border-gray-200 rounded-xl p-3 pt-5 peer focus:border-red-500 focus:outline-none transition-colors resize-none"
                 />
-                <label className="absolute left-3 top-4 text-gray-500 text-sm transition-all pointer-events-none
+                <label
+                  className="absolute left-3 top-4 text-gray-500 text-sm transition-all pointer-events-none
                   peer-focus:top-2 peer-focus:text-xs peer-focus:text-red-500
                   peer-placeholder-shown:top-4 peer-placeholder-shown:text-base
-                  peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs">
+                  peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs"
+                >
                   Your Message
                 </label>
               </div>
@@ -280,8 +320,18 @@ export default function TourCards2() {
                 type="submit"
                 className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-3.5 rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2 group"
               >
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                <svg
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                  />
                 </svg>
                 Send Enquiry
               </button>
@@ -289,9 +339,10 @@ export default function TourCards2() {
 
             {/* Footer */}
             <div className="px-6 pb-6 text-center">
-              <p className="text-xs text-gray-400">We'll get back to you within 24 hours</p>
+              <p className="text-xs text-gray-400">
+                We'll get back to you within 24 hours
+              </p>
             </div>
-
           </div>
         </div>
       )}

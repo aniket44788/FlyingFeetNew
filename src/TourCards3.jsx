@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import triund from "../src/assets/Swipper/triund.jpg"
+import mclo from "../src/assets/mclo.jpeg"
+
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
@@ -13,7 +15,7 @@ export const tours = [
     rating: 4.8,
     reviews: 180,
     price: 6599,
-    image: triund,
+    image: mclo,
     features: ["Trekking Included", "Camping Stay", "Guide Included"],
     tagColor: "bg-red-500"
   },

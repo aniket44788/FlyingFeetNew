@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import kedarkantha from "../src/assets/kedarkantha.jpeg"
+import hamptapass from "../src/assets/hamptapass.jpeg"
 
 import animemountain from "./assets/animemountain.png";
 import atal from "./assets/atal.png";
@@ -24,7 +26,7 @@ const treks = [
     price: 8999,
     rating: 4.9,
     reviews: 150,
-    image: "https://images.unsplash.com/photo-1544980913-3f1f4f9c8e0f",
+    image: kedarkantha,
     detailUrl: "/treks/kedarkantha-trek",
   },
   {
@@ -35,7 +37,7 @@ const treks = [
     price: 7999,
     rating: 4.8,
     reviews: 100,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
+    image: hamptapass,
     detailUrl: "/treks/hampta-pass-trek",
   },
   {
