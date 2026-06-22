@@ -13,9 +13,13 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-const SERVICE_ID = "service_a74zlnf";
-const TEMPLATE_ID = "template_qe2jgen";
-const PUBLIC_KEY = "aG1J-USjBV4O6JSSb";
+// const SERVICE_ID = "service_a74zlnf";
+// const TEMPLATE_ID = "template_qe2jgen";
+// const PUBLIC_KEY = "aG1J-USjBV4O6JSSb";
+
+const SERVICE_ID = "service_wrif919";
+const TEMPLATE_ID = "template_hy3cy8d";
+const PUBLIC_KEY = "GwTM7Gy-N7kgmfsnV";
 
 function About() {
   const [formData, setFormData] = useState({
